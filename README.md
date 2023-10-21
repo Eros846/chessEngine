@@ -4,7 +4,7 @@
 # \<Chess Game\>
  > Your author list below should include links to all members GitHub (remove existing author).
  
- > Authors: \<[Martin De guzman, ](https://github.com/KuYuh02)\>
+ > Authors: \<[Martin De guzman, ](https://github.com/KuYuh02)\>, \<[David Aispuro, ](https://github.com/DavidA346)\>
 
  > You will be forming a group of **FOUR** students and working on an interesting project. The project has 4 phases, each one with specific requirements. A list of proposed project ideas that have been successful in previous quarters is listed in the project specifications document on Canvas. You can select an idea from the list and start thinking about the features you will implement. If you want to propose your own original idea, you will have to contact your instructor to discuss the project and obtain written permission before you submit your project proposal (Phase 1). The project work should be divided almost equally among team members. You can of course help each other, but it needs to be clear who will be responsible for which features. Additionally, you are expected to follow Scrum patterns, specifically the use of a Scrum (Project) board, Sprints, and Scrum meetings.
 
@@ -20,7 +20,9 @@
  > * One of the reasons this project is interesting is it exposes us to working with both front end and back end development. It also deals with security via account information and is an exciting challenge. We also love the fact that despite chess being a simple game, there is a lot of features we can implement features to make it more convenenient, entertaining, etc. Features that are not possible to implement in real life chess. 
  > We plan to code our backend/the main game in C++ and code the website in HTML and CSS. 
  > The project will take many different inputs. For example, on the landing page, it will take user login information such as email and password. As for the game itself, it will take user mouse and click input to play the game. 
- > * The project will have a website to make an account, learn the rules of chess, see game history, see move history, and host the main game. The main chess game will have the same rules of chess with the addition of being able to revert moves, //ENTER MORE GAME FEATURES//
+ > * The project will have a website to make an account, learn the rules of chess, see game history, see move history, and host the main game. The main chess game will have the same rules of chess with the addition of being able to revert moves.
+>  * The backend of the project will take care of the logic of the chess game. This includes setting up and displaying the pieces and board, creating both a black and white player and determining the legal moves for each piece and whether or not the move can be completed. Finally, it will display the outcome of the game and ask the user to play again.
+>  * The input for this project will be accomplished through the website which will take in a user's account and output it back to them. The user will also need to input for every turn they wish to complete and the output will be that move displayed on the screen.
  > This description should be in enough detail that the TA/instructor can determine the complexity of the project and if it is sufficient for the team members to complete in the time allotted. 
  > 
  > You also need to set up an empty project board using GitHub projects (board view). Make sure you add the board under your project repository. You should also have a Product Backlog and In testing columns added.
