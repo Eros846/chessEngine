@@ -1,7 +1,7 @@
 
 # Chess Game
  
- > Authors: \[Martin De Guzman](https://github.com/KuYuh02)\, \[David Aispuro](https://github.com/DavidA346)\, \[Michael Mihalovich](https://github.com/michaelm015)\, \[Sarik Raj Karki](https://github.com/Eros846)\
+ > Authors: \[Martin De Guzman](https://github.com/KuYuh02),  \[David Aispuro](https://github.com/DavidA346),  \[Michael Mihalovich](https://github.com/michaelm015),  \[Sarik Raj Karki](https://github.com/Eros846)
 
 ## Project Description
  > * One of the reasons this project is interesting is it exposes us to working with both front end and back end development. It also deals with security via account information and is an exciting challenge. We also love the fact that despite chess being a simple game, there is a lot of features we can implement features to make it more convenenient, entertaining, etc. Features that are not possible to implement in real life chess. 
