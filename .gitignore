@@ -1,1 +1,7 @@
 test
+CMakeCache.txt
+CMakeFiles/
+CMakeLists.txt
+Makefile
+chessGame
+cmake_install.cmake
