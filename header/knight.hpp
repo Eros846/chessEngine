@@ -1,11 +1,12 @@
-#ifndef KNIGHT_HPP
-#define KNIGHT_HPP
+#include "../header/piece.hpp"
+#ifndef __KNIGHT_HPP__
+#define __KNIGHT_HPP__
 
-class knight : piece{
-    private:
-
+class Knight : public Piece{
     public:
+    //Constructor
+    Knight(int color);
     bool move();
-}
+};
 
-#endif /* KNIGHT_HPP */ 
+#endif /* __KNIGHT_HPP__ */ 

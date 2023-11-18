@@ -1,11 +1,12 @@
-#ifndef BISHOP_HPP
-#define BISHOP_HPP
+#include "../header/piece.hpp"
+#ifndef __BISHOP_HPP__
+#define __BISHOP_HPP__
 
-class bishop : piece{
-    private:
-
+class Bishop : public Piece{
     public:
-    bool move();
-}
+        //Constructor
+        Bishop(int color);
+        bool move();
+};
 
-#endif /* BISHOP_HPP */
+#endif /* __BISHOP_HPP__ */

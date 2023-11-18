@@ -1,11 +1,12 @@
-#ifndef ROOK_HPP
-#define ROOK_HPP
+#include "../header/piece.hpp"
+#ifndef __ROOK_HPP__
+#define __ROOK_HPP__
 
-class rook : piece{
-    private:
-
+class Rook : public Piece{
     public:
+    //Constructor
+    Rook(int color);
     bool move();
-}
+};
 
-#endif /* ROOK_HPP */
+#endif /* __ROOK_HPP__ */

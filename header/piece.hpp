@@ -1,11 +1,17 @@
-#ifndef PIECE_HPP
-#define PIECE_HPP
+#ifndef __PIECE_HPP__
+#define __PIECE_HPP__
 
-class piece{
+class Piece{
     private:
+        char pieceType; //holds the type of piece
+        int color; //color of the piece
 
     public:
-    bool move();
-}
+        //Default constructor
+        Piece();
+        //Constructor that takes in both pieceType and color
+        Piece(char pieceType, int color);
+        bool move();
+};
 
-#endif /* PIECE_HPP */
+#endif /* __PIECE_HPP__ */

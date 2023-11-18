@@ -1,11 +1,12 @@
-#ifndef QUEEN_HPP
-#define QUEEN_HPP
+#include "../header/piece.hpp"
+#ifndef __QUEEN_HPP__
+#define __QUEEN_HPP__
 
-class queen : piece{
-    private:
-
+class Queen : public Piece{
     public:
+    //Constructor
+    Queen(int color);
     bool move();
-}
+};
 
-#endif /* QUEEN_HPP */
+#endif /* __QUEEN_HPP__ */

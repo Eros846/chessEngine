@@ -1,11 +1,12 @@
-#ifndef PAWN_HPP
-#define PAWN_HPP
+#include "../header/piece.hpp"
+#ifndef __PAWN_HPP__
+#define __PAWN_HPP__
 
-class pawn : piece{
-    private:
-
+class Pawn : public Piece{
     public:
+    //Constructor
+    Pawn(int color);
     bool move();
-}
+};
 
-#endif /* PAWN_HPP */
+#endif /* __PAWN_HPP__ */

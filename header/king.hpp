@@ -1,11 +1,12 @@
-#ifndef KING_HPP
-#define KING_HPP
+#include "../header/piece.hpp"
+#ifndef __KING_HPP__
+#define __KING_HPP__
 
-class king : piece{
-    private:
-
+class King : public Piece{
     public:
-    bool move();
-}
+        //Constructor
+        King(int color);
+        bool move();
+};
 
-#endif /* KING_HPP */
+#endif /* __KING_HPP__ */
