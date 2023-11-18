@@ -1,7 +1,7 @@
 #ifndef QUEEN_HPP
 #define QUEEN_HPP
 
-class QUEEN{
+class queen : piece{
     private:
 
     public:

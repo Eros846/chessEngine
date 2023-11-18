@@ -1,11 +1,11 @@
-#ifndef QUEEN_HPP
-#define QUEEN_HPP
+#ifndef ROOK_HPP
+#define ROOK_HPP
 
-class queen{
+class rook : piece{
     private:
 
     public:
     bool move();
 }
 
-#endif /* QUEEN_HPP */
+#endif /* ROOK_HPP */

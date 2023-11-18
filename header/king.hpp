@@ -1,7 +1,7 @@
 #ifndef KING_HPP
 #define KING_HPP
 
-class king{
+class king : piece{
     private:
 
     public:
