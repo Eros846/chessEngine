@@ -1,17 +1,21 @@
-#ifndef __PIECE_HPP__
-#define __PIECE_HPP__
+#ifndef PIECE_HPP
+#define PIECE_HPP
 
-class Piece{
-    private:
-        char pieceType; //holds the type of piece
-        int color; //color of the piece
+#include "square.hpp"
+enum class Color {Black, White};
+
+class piece{
+    protected:
+    square* position; 
+    Color color; 
 
     public:
-        //Default constructor
-        Piece();
-        //Constructor that takes in both pieceType and color
-        Piece(char pieceType, int color);
-        bool move();
+    piece(Square* pos, Color col);
+    virtual ~Piece();
+    virtual bool canMoveTo(Square* destination) const = 0;
+    virtual string getSymbol() const = 0;
+    Color getColor() const;
+    Square* getPosition()const;
 };
 
-#endif /* __PIECE_HPP__ */
+#endif 
