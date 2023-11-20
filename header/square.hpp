@@ -5,17 +5,18 @@
 
 class square {
     public:
-    square(int row, int col, piece Piece); 
-    piece getPiece();
+    square(int r, int c); 
+    piece* getPiece();
     bool isEmpty();
-    void setPiece(piece Piece);
+    void setPiece(piece* p);
     void clearSquare();
+    int getRow();
+    int getCol();
     
     private:
-    piece Piece;
+    piece pieceType;
     int row;
     int col;
-    
 };
 
 #endif
