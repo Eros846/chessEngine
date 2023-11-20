@@ -6,6 +6,6 @@ class piece{
 
     public:
     bool move();
-}
+};
 
 #endif /* PIECE_HPP */
