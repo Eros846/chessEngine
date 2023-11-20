@@ -2,6 +2,9 @@
 #define PIECE_HPP
 
 #include "square.hpp"
+#include <string>
+
+using namespace std;
 enum class Color {Black, White};
 
 class piece{
@@ -10,12 +13,12 @@ class piece{
     Color color; 
 
     public:
-    piece(Square* pos, Color col);
-    virtual ~Piece();
-    virtual bool canMoveTo(Square* destination) const = 0;
+    piece(square* pos, Color col);
+    virtual ~piece();
+    virtual bool canMoveTo(square* destination) const = 0;
     virtual string getSymbol() const = 0;
     Color getColor() const;
-    Square* getPosition()const;
+    square* getPosition()const;
 };
 
 #endif 
