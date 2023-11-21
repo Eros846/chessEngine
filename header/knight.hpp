@@ -3,17 +3,14 @@
 
 #include "piece.hpp"
 
-class knight : public piece{
-    private:
+class Knight : public Piece{
+ private:
 
-    public:
-
-    ~knight();
-    knight(square* pos, Color col);
-    bool canMoveTo(square* destination) const override;
-    string getSymbol() const override;
-
-    
+ public:
+   ~Knight();
+   Knight(Square* pos, Color col);
+   bool canMoveTo(Square* destination) const override;
+   string getSymbol() const override;
 };
 
 #endif /* KNIGHT_HPP */ 

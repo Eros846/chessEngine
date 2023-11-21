@@ -1,18 +1,18 @@
 #include "../header/bishop.hpp"
 
-bishop::~bishop(){
+Bishop::~Bishop(){
 }
 
-bishop::bishop(square* pos, Color col){
+Bishop::Bishop(Square* pos, Color col){
     position = pos;
     color = col;
 }
 
-bool bishop::canMoveTo(square* destination) const{
+bool Bishop::canMoveTo(Square* destination) const{
     //To implement
     return true;
 }
 
-string bishop::getSymbol() const{
+string Bishop::getSymbol() const{
     return color == Color::White ? "B" : "b";
 }

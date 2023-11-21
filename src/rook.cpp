@@ -1,18 +1,18 @@
 #include "../header/rook.hpp"
 
-rook::~rook(){
+Rook::~Rook(){
 }
 
-rook::rook(square* pos, Color col){
+Rook::Rook(Square* pos, Color col){
     position = pos;
     color = col;
 }
 
-bool rook::canMoveTo(square* destination) const{
+bool Rook::canMoveTo(Square* destination) const{
     //To implement
     return true;
 }
 
-string rook::getSymbol() const{
+string Rook::getSymbol() const{
     return color == Color::White ? "R" : "r";
 };

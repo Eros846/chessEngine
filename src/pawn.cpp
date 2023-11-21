@@ -1,18 +1,18 @@
 #include "../header/pawn.hpp"
 
-pawn::~pawn(){
+Pawn::~Pawn(){
 }
 
-pawn::pawn(square* pos, Color col){
+Pawn::Pawn(Square* pos, Color col){
     position = pos;
     color = col;
 }
 
-bool pawn::canMoveTo(square* destination) const{
+bool Pawn::canMoveTo(Square* destination) const{
     //To implement
     return true;
 }
 
-string pawn::getSymbol() const{
+string Pawn::getSymbol() const{
     return color == Color::White ? "P" : "p";
 }

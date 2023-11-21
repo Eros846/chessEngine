@@ -1,19 +1,19 @@
 #include "../header/king.hpp"
 
-king::~king(){
+King::~King(){
 }
 
-king::king(square* pos, Color col){
+King::King(Square* pos, Color col){
     position = pos;
     color = col;
 }
 
-bool king::canMoveTo(square* destination) const{
+bool King::canMoveTo(Square* destination) const{
     //To implement
     return true;
 }
 
-string king::getSymbol() const{
+string King::getSymbol() const{
     return color == Color::White ? "K" : "k";
 }
 

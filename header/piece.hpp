@@ -3,24 +3,24 @@
 
 #include <string>
 
-class square;
+class Square;
 
 using namespace std;
 enum class Color {Black, White, none};
 
-class piece{
+class Piece{
     protected:
-    square* position; 
+    Square* position; 
     Color color; 
 
     public:
-    piece();
-    piece(square* pos, Color col);
-    virtual ~piece();
-    virtual bool canMoveTo(square* destination) const = 0;
+    Piece();
+    Piece(Square* pos, Color col);
+    virtual ~Piece();
+    virtual bool canMoveTo(Square* destination) const = 0;
     virtual string getSymbol() const = 0;
     Color getColor() const;
-    square* getPosition()const;
+    Square* getPosition()const;
 };
 
-#endif 
+#endif /* PIECE_HPP */  

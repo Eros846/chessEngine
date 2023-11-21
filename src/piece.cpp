@@ -1,21 +1,22 @@
 #include "../header/piece.hpp"
 
-piece::piece(){
+Piece::Piece(){
     position = nullptr;
     color = Color::none;
 }
-piece::piece(square* pos, Color col){
+
+Piece::Piece(Square* pos, Color col){
     position = pos;
     color = col;
 }
 
-Color piece::getColor() const{
+Piece::~Piece() {
+}
+
+Color Piece::getColor() const{
     return color;
 }
 
-square* piece::getPosition()const{
+Square* Piece::getPosition()const{
     return position;
-}
-
-piece::~piece() {
 }
