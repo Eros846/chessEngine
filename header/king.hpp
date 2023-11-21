@@ -1,11 +1,19 @@
 #ifndef KING_HPP
 #define KING_HPP
 
-class king : piece{
+#include "piece.hpp"
+
+class king : public piece{
     private:
 
     public:
-    bool move();
-}
+
+    ~king();
+    king(square* pos, Color col);
+    bool canMoveTo(square* destination) const override;
+    string getSymbol() const override;
+
+    
+};
 
 #endif /* KING_HPP */

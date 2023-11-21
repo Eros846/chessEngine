@@ -1,11 +1,18 @@
 #ifndef BISHOP_HPP
 #define BISHOP_HPP
 
-class bishop : piece{
+#include "piece.hpp"
+
+class bishop : public piece{
     private:
 
     public:
-    bool move();
-}
 
+    ~bishop();
+    bishop(square* pos, Color col);
+    bool canMoveTo(square* destination) const override;
+    string getSymbol() const override;
+
+    
+};
 #endif /* BISHOP_HPP */

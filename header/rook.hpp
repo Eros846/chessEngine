@@ -1,11 +1,19 @@
 #ifndef ROOK_HPP
 #define ROOK_HPP
 
-class rook : piece{
+#include "piece.hpp"
+
+class rook : public piece{
     private:
 
     public:
-    bool move();
-}
+
+    ~rook();
+    rook(square* pos, Color col);
+    bool canMoveTo(square* destination) const override;
+    string getSymbol() const override;
+
+    
+};
 
 #endif /* ROOK_HPP */

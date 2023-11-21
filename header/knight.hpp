@@ -1,11 +1,19 @@
 #ifndef KNIGHT_HPP
 #define KNIGHT_HPP
 
-class knight : piece{
+#include "piece.hpp"
+
+class knight : public piece{
     private:
 
     public:
-    bool move();
-}
+
+    ~knight();
+    knight(square* pos, Color col);
+    bool canMoveTo(square* destination) const override;
+    string getSymbol() const override;
+
+    
+};
 
 #endif /* KNIGHT_HPP */ 
