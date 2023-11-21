@@ -3,7 +3,7 @@
 
 #include "piece.hpp"
 
-class rook : piece{
+class rook : public piece{
     private:
 
     public:

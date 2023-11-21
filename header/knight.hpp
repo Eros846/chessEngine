@@ -3,7 +3,7 @@
 
 #include "piece.hpp"
 
-class knight : piece{
+class knight : public piece{
     private:
 
     public:
