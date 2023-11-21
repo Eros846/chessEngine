@@ -3,17 +3,14 @@
 
 #include "piece.hpp"
 
-class rook : public piece{
-    private:
+class Rook : public Piece{
+ private:
 
-    public:
-
-    ~rook();
-    rook(square* pos, Color col);
-    bool canMoveTo(square* destination) const override;
-    string getSymbol() const override;
-
-    
+ public:
+   ~Rook();
+   Rook(Square* pos, Color col);
+   bool canMoveTo(Square* destination) const override;
+   string getSymbol() const override;
 };
 
 #endif /* ROOK_HPP */

@@ -1,18 +1,18 @@
 #include "../header/queen.hpp"
 
-queen::~queen(){
+Queen::~Queen(){
 }
 
-queen::queen(square* pos, Color col){
+Queen::Queen(Square* pos, Color col){
     position = pos;
     color = col;
 }
 
-bool queen::canMoveTo(square* destination) const{
+bool Queen::canMoveTo(Square* destination) const{
     //To implement
     return true;
 }
 
-string queen::getSymbol() const{
+string Queen::getSymbol() const{
     return color == Color::White ? "Q" : "q";
 }

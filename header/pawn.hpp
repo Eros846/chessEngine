@@ -3,17 +3,14 @@
 
 #include "piece.hpp"
 
-class pawn : public piece{
-    private:
+class Pawn : public Piece{
+ private:
 
-    public:
-
-    ~pawn();
-    pawn(square* pos, Color col);
-    bool canMoveTo(square* destination) const override;
-    string getSymbol() const override;
-
-    
+ public:
+   ~Pawn();
+   Pawn(Square* pos, Color col);
+   bool canMoveTo(Square* destination) const override;
+   string getSymbol() const override;
 };
 
-#endif 
+#endif /* PAWN_HPP */ 

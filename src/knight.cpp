@@ -1,18 +1,18 @@
 #include "../header/knight.hpp"
 
-knight::~knight(){
+Knight::~Knight(){
 }
 
-knight::knight(square* pos, Color col){
+Knight::Knight(Square* pos, Color col){
     position = pos;
     color = col;
 }
 
-bool knight::canMoveTo(square* destination) const{
+bool Knight::canMoveTo(Square* destination) const{
     //To implement
     return true;
 }
 
-string knight::getSymbol() const{
+string Knight::getSymbol() const{
     return color == Color::White ? "N" : "n";
 }

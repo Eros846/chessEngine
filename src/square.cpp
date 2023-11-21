@@ -1,27 +1,29 @@
 #include "../header/square.hpp"
 
-square::square(int r, int c) : row(r), col(c), pieceType(nullptr) {}
+Square::Square() : row(0), col(0), pieceType(nullptr) {}
 
-int square::getRow(){
-    return row;
+Square::Square(int r, int c) : row(r), col(c), pieceType(nullptr) {}
+
+int Square::getRow(){
+   return row;
 }
 
-int square::getCol(){
-    return col;
+int Square::getCol(){
+   return col;
 }
 
-piece* square::getPiece(){
-    return this->pieceType;
+Piece* Square::getPiece(){
+   return this->pieceType;
 }
 
-void square::setPiece(piece* p){
-    pieceType = p;
+void Square::setPiece(Piece* p){
+   pieceType = p;
 }
 
-bool square::isEmpty(){
-    return pieceType == nullptr; 
+bool Square::isEmpty(){
+   return pieceType == nullptr;
 }
 
-void square::clearSquare(){
-    pieceType = nullptr;
+void Square::clearSquare(){
+   pieceType = nullptr;
 }

@@ -3,20 +3,21 @@
 
 #include "piece.hpp"
 
-class square {
-    public:
-    square(int r, int c); 
-    piece* getPiece();
-    bool isEmpty();
-    void setPiece(piece* p);
-    void clearSquare();
-    int getRow();
-    int getCol();
-    
-    private:
-    piece* pieceType;
-    int row;
-    int col;
+class Square {
+ private:
+   Piece* pieceType;
+   int row;
+   int col;
+   
+ public:
+   Square();
+   Square(int r, int c);
+   Piece* getPiece();
+   bool isEmpty();
+   void setPiece(Piece* p);
+   void clearSquare();
+   int getRow();
+   int getCol();
 };
 
-#endif
+#endif /* SQUARE_HPP */
