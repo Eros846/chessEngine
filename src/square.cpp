@@ -14,12 +14,12 @@ piece* square::getPiece(){
     return this->pieceType;
 }
 
-void square::setPiece(piece *p){
+void square::setPiece(piece* p){
     pieceType = p;
 }
 
 bool square::isEmpty(){
-    return this->pieceType == nullptr; 
+    return pieceType == nullptr; 
 }
 
 void square::clearSquare(){

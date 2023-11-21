@@ -14,7 +14,7 @@ class square {
     int getCol();
     
     private:
-    piece pieceType;
+    piece* pieceType;
     int row;
     int col;
 };

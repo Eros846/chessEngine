@@ -1,11 +1,12 @@
 #ifndef PIECE_HPP
 #define PIECE_HPP
 
-#include "square.hpp"
 #include <string>
 
+class square;
+
 using namespace std;
-enum class Color {Black, White};
+enum class Color {Black, White, none};
 
 class piece{
     protected:
@@ -13,6 +14,7 @@ class piece{
     Color color; 
 
     public:
+    piece();
     piece(square* pos, Color col);
     virtual ~piece();
     virtual bool canMoveTo(square* destination) const = 0;
