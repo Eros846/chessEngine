@@ -57,8 +57,8 @@ void chessBoard::setupBoard(){
     board[7][6]->setPiece(new Knight(board[7][6], Color::White));
     board[7][7]->setPiece(new Rook(board[7][7], Color::White));
 
-    for (int i = 0; i < 8; ++i){
-        board[6][i]->setPiece(new Pawn(board[1][i], Color::White));
+    for (int j = 0; j < 8; ++j){
+        board[6][j]->setPiece(new Pawn(board[6][j], Color::White));
     }
 }
 
