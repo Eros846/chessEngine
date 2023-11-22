@@ -47,27 +47,18 @@ Key Features:
 ![IMG_0117](https://github.com/cs100/final-project-mdeg011-skark010-daisp002-mmiha004/assets/88258745/718ebf95-f786-4772-aeab-d52006fc5d8c)
 
 
- 
- > ## Phase III
- > You will need to schedule a check-in for the second scrum meeting with the same reader you had your first scrum meeting with (using Calendly). Your entire team must be present. This meeting will occur on Zoom and should be conducted by Wednesday of week 8.
- 
- > BEFORE the meeting you should do the following:
- > * Update your class diagram from Phase II to include any feedback you received from your TA/grader.
- > * Considering the SOLID design principles, reflect back on your class diagram and think about how you can use the SOLID principles to improve your design. You should then update the README.md file by adding the following:
- >   * A new class diagram incorporating your changes after considering the SOLID principles.
- >   * For each update in your class diagram, you must explain in 3-4 sentences:
- >     * What SOLID principle(s) did you apply?
- >     * How did you apply it? i.e. describe the change.
- >     * How did this change help you write better code?
- > * Perform a new sprint plan like you did in Phase II.
- > * You should also make sure that your README file (and Project board) are up-to-date reflecting the current status of your project and the most recent class diagram. Previous versions of the README file should still be visible through your commit history.
- 
-> During the meeting with your reader you will discuss: 
- > * How effective your last sprint was (each member should talk about what they did)
- > * Any tasks that did not get completed last sprint, and how you took them into consideration for this sprint
- > * Any bugs you've identified and created issues for during the sprint. Do you plan on fixing them in the next sprint or are they lower priority?
- > * What tasks you are planning for this next sprint.
+ ## Phase III
+## Updated Class Diagram and SOLID Principles
 
+### Revised Class Diagram
+ ![Phase3UML](https://github.com/cs100/final-project-mdeg011-skark010-daisp002-mmiha004/assets/146981459/4cd6eaff-4242-4b31-b2a4-f7163a8ca2ef)
+ There are a number of changes made to our UML as a reflection of the combination of feedback and implementation. The major change is the removal of the "PieceType" class. From feedback during our last meeting, we concluded was redundant and unnecessary. There are various minor additions and changes to the classes. The causes for the rest of these changes are ease of implementation, and oversights during the earlier phases before we started building our program. We have identified the key characteristics of each of our classes and how we want them to interact, so we have more functions and more accurate detail in this updated Class Diagram. To summarize our changes in a quantifiable way; the ChessBoard class should operate around the general rules of chess itself, while the individual piece types will have their own unique set of legal moves that operate within the bounds of the game as monitored in ChessBoard.
+
+### SOLID Design Principles
+ We redesigned our classes with the Open-Closed Principle in mind, because of the complexity of the chess game. This is evident in the Pieces class and the 6 types of pieces that inherit Pieces. Many different objects are dependent on this class but are unable to modify the Pieces classes. 
+ Another principle we kept in mind was the Liskov Substitution Principle. This principle helped us stay focused when redesigning all the different pieces. Now all the subclass types of pieces will behave according to the Piece superclass. The changes made to the subclass pieces caused us to move functions around, creating a new idea and plan for the classes as stated above.
+ The Interface Segregation Principle is one that does not impact our development very much but is very helpful to keep in mind. We understand chess very well, and the visual simplicity on the client side of the program is a theme we are trying to uphold.
+ The Dependency Inversion Principle also helped with the redesign process of our class diagram. keeping abstractions and implementations separate is something we did not fully consider when making the original class diagram, which we worked out through feedback and changes during our coding process.
  
  > ## Final deliverable
  > All group members will give a demo to the reader during lab time. ou should schedule your demo on Calendly with the same reader who took your second scrum meeting. The reader will check the demo and the project GitHub repository and ask a few questions to all the team members. 
