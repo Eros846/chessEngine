@@ -8,8 +8,8 @@ class Knight : public Piece{
 
  public:
    ~Knight();
-   Knight(Square* pos, Color col);
-   bool canMoveTo(Square* destination) const override;
+   Knight(Color col);
+   bool canMoveTo(int sourceX, int sourceY, int targetX, int targetY, const chessBoard& board) const override;
    string getSymbol() const override;
 };
 

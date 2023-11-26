@@ -3,12 +3,11 @@
 Bishop::~Bishop(){
 }
 
-Bishop::Bishop(Square* pos, Color col){
-    position = pos;
+Bishop::Bishop(Color col){
     color = col;
 }
 
-bool Bishop::canMoveTo(Square* destination) const{
+bool Bishop::canMoveTo(int sourceX, int sourceY, int targetX, int targetY, const chessBoard& board) const{
     //To implement
     return true;
 }

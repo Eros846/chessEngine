@@ -3,12 +3,11 @@
 Pawn::~Pawn(){
 }
 
-Pawn::Pawn(Square* pos, Color col){
-    position = pos;
+Pawn::Pawn(Color col){
     color = col;
 }
 
-bool Pawn::canMoveTo(Square* destination) const{
+bool Pawn::canMoveTo(int sourceX, int sourceY, int targetX, int targetY, const chessBoard& board) const{
     //To implement
     return true;
 }

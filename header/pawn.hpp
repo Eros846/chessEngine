@@ -8,8 +8,8 @@ class Pawn : public Piece{
 
  public:
    ~Pawn();
-   Pawn(Square* pos, Color col);
-   bool canMoveTo(Square* destination) const override;
+   Pawn(Color col);
+   bool canMoveTo(int sourceX, int sourceY, int targetX, int targetY, const chessBoard& board) const override;
    string getSymbol() const override;
 };
 

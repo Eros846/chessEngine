@@ -3,12 +3,11 @@
 Rook::~Rook(){
 }
 
-Rook::Rook(Square* pos, Color col){
-    position = pos;
+Rook::Rook(Color col){
     color = col;
 }
 
-bool Rook::canMoveTo(Square* destination) const{
+bool Rook::canMoveTo(int sourceX, int sourceY, int targetX, int targetY, const chessBoard& board) const{
     //To implement
     return true;
 }

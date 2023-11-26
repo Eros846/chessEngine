@@ -3,12 +3,11 @@
 Queen::~Queen(){
 }
 
-Queen::Queen(Square* pos, Color col){
-    position = pos;
+Queen::Queen(Color col){
     color = col;
 }
 
-bool Queen::canMoveTo(Square* destination) const{
+bool Queen::canMoveTo(int sourceX, int sourceY, int targetX, int targetY, const chessBoard& board) const{
     //To implement
     return true;
 }
