@@ -2,10 +2,13 @@
 #define SQUARE_HPP
 
 #include "piece.hpp"
+#include <memory>
+
+class Piece;
 
 class Square {
  private:
-   Piece* pieceType;
+   std::unique_ptr<Piece> pieceType;
    int row;
    int col;
    

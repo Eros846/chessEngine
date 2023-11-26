@@ -8,8 +8,8 @@ class Bishop : public Piece{
 
  public:
    ~Bishop();
-   Bishop(Square* pos, Color col);
-   bool canMoveTo(Square* destination) const override;
+   Bishop(Color col);
+   bool canMoveTo(int sourceX, int sourceY, int targetX, int targetY, const chessBoard& board) const override;
    string getSymbol() const override;
 };
 #endif /* BISHOP_HPP */

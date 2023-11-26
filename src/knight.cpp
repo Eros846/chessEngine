@@ -3,12 +3,11 @@
 Knight::~Knight(){
 }
 
-Knight::Knight(Square* pos, Color col){
-    position = pos;
+Knight::Knight(Color col){
     color = col;
 }
 
-bool Knight::canMoveTo(Square* destination) const{
+bool Knight::canMoveTo(int sourceX, int sourceY, int targetX, int targetY, const chessBoard& board) const{
     //To implement
     return true;
 }

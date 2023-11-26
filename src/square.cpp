@@ -13,11 +13,11 @@ int Square::getCol(){
 }
 
 Piece* Square::getPiece(){
-   return this->pieceType;
+   return this->pieceType.get();
 }
 
 void Square::setPiece(Piece* p){
-   pieceType = p;
+   pieceType.reset(p);
 }
 
 bool Square::isEmpty(){
@@ -25,5 +25,5 @@ bool Square::isEmpty(){
 }
 
 void Square::clearSquare(){
-   pieceType = nullptr;
+   pieceType.reset(); 
 }
