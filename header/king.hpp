@@ -8,8 +8,8 @@ class King : public Piece{
 
  public:
    ~King();
-   King(Square* pos, Color col);
-   bool canMoveTo(Square* destination) const override;
+   King(Color col);
+   bool canMoveTo(int sourceX, int sourceY, int targetX, int targetY, const chessBoard& board) const override;
    string getSymbol() const override;
 };
 

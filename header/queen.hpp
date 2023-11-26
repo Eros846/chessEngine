@@ -8,8 +8,9 @@ class Queen : public Piece{
 
  public:
    ~Queen();
-   Queen(Square* pos, Color col);
-   bool canMoveTo(Square* destination) const override;
+   Queen(Color col);
+   bool canMoveTo(int sourceX, int sourceY, int targetX, int targetY, const chessBoard& board) const override;
+
    string getSymbol() const override;
 };
 
