@@ -88,3 +88,7 @@ void chessBoard::displayBoard(){
    cout << "   a b c d e f g h" << endl;
    cout << endl;
 }
+
+void chessBoard::movePiece(int sourceX, int sourceY, int targetX, int targetY){
+    
+}
