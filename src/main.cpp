@@ -1,6 +1,6 @@
 #include <iostream>
 #include <string>
-#include <map>
+#include <set>
 
 #include "../header/chessBoard.hpp"
 
@@ -12,16 +12,16 @@ int main()
     char userOption = 0;
     bool userValid = false;
 
-    map<string, string> userProfiles;
+    set<string> userProfiles;
     string userUsername = " ";
     string userPassword = " ";
     bool usernameValid = false;
     bool passwordValid = false;
 
-    string user1Username = " ";
-    string user1Password = " ";
-    string user2Username = " ";
-    string user2Password = " ";
+    string player1Username = " ";
+    string user1Password = " ";          //dont need?
+    string player2Username = " ";
+    string user2Password = " ";         //dont need?
     bool user1Valid = false;
     bool user2Valid = false;
 
@@ -50,7 +50,7 @@ int main()
     
                 while(usernameValid == false)
                 {
-                    cout << "Enter a username between 4 and 20 characters:" << endl;
+                    cout << "Enter a username between 4 and 20 characters: (Duplicates will be deleted)" << endl;
                     cin >> userUsername;                                                                      //Get user input
                     cin.ignore(256,'\n');
                     if(userUsername.length() < 4 || userUsername.length() > 20)                               //if less than four or greater than 20, stop. if betweem, continue
@@ -60,31 +60,36 @@ int main()
                     else
                     {
                         usernameValid = true;
+                        userProfiles.insert(userUsername);                                                                  //once validated,  insert to set
                         cout << "Your username is " << userUsername << ". Write it down if you need." << endl;
                     }
                 }
 
-                while(passwordValid == false)
-                {
-                    cout << "Enter a password between 12 and 20 characters:" << endl;
-                    cin >> userPassword;                                                                        //Get user input
-                    cin.ignore(256,'\n');
-                    if(userPassword.length() < 12 || userPassword.length() > 20)                                //if less than 12 or greater than 20, stop. if between, continue
-                    {
-                        cout <<  "Please enter a valid password!" << endl;
-                    }
-                    else
-                    {
-                        passwordValid = true;
-                        userProfiles.insert(pair<string, string> (userUsername, userPassword));
-                        cout << "Your password is " << userPassword << ". Write it down if you need." << endl;
-                    }
-                }
+                // while(passwordValid == false)
+                // {
+                //     cout << "Enter a password between 12 and 20 characters:" << endl;
+                //     cin >> userPassword;                                                                        //Get user input
+                //     cin.ignore(256,'\n');
+                //     if(userPassword.length() < 12 || userPassword.length() > 20)                                //if less than 12 or greater than 20, stop. if between, continue
+                //     {
+                //         cout <<  "Please enter a valid password!" << endl;
+                //     }
+                //     else
+                //     {
+                //         passwordValid = true;
+                //         userProfiles.insert(pair<string, string> (userUsername, userPassword));
+                //         cout << "Your password is " << userPassword << ". Write it down if you need." << endl;
+                //     }
+                // }
+
+        
                 //pre test
-                for (auto itr = userProfiles.begin(); itr != userProfiles.end(); ++itr)
-                {
-                    cout << "Username: " << itr->first << "\nPassword: " << itr->second << endl;
-                }
+                // for (auto itr = userProfiles.begin(); itr != userProfiles.end(); ++itr)
+                // {
+                //     cout << "Username: " << *itr << endl;
+                // }
+                usernameValid = false;                                                                          //Reset to validate future usernames
+                // passwordValid = false;
             }
 
             if (userOption == '3')
@@ -95,16 +100,43 @@ int main()
                 {
                 cout << "Player 1, Enter an existing username and password or type x to go back to main menu and make one" << endl;
                 cin >> player1Username;
-                if(userProfiles.find(player1Username) == userProfiles.end())        //Check username exists in database
+                if(player1Username == "x")
                 {
-                    
+                    goto exit;
+                }
+                else if(userProfiles.find(player1Username) == userProfiles.end())        //Check username exists in database
+                {
+                    cout << "Username not found. Try again." << endl;                   //clears set after exiting program
+                }
+                else
+                {
+                    user1Valid = true;
+                }
                 }
 
+                while (user2Valid == false)
+                {
+                cout << "Player 2, Enter an existing username and password or type x to go back to main menu and make one" << endl;
+                cin >> player2Username;
+                if(player2Username == "x")
+                {
+                    goto exit;
+                }
+                else if(userProfiles.find(player2Username) == userProfiles.end() || player2Username == player1Username)        //Check username exists in database
+                {
+                    cout << "Username not found. Try again." << endl;                                                           //clears set after exiting program
+                }
+                else
+                {
+                    user2Valid = true;
+                }
                 }
 
                 board.displayBoard();
+                user1Valid = false;                                                                              //
+                user2Valid = false;                                                                             //Reset for future games in the same terminal
             }
-
+            exit:
             if (userOption == '4')
             {
                 cout << "You entered option 4." << endl;
