@@ -9,7 +9,7 @@ Bishop::Bishop(Color col){
 
 bool Bishop::canMoveTo(int sourceX, int sourceY, int targetX, int targetY, const chessBoard& board) const{
     //To implement
-    return true;
+    return false;
 }
 
 string Bishop::getSymbol() const{

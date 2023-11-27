@@ -62,6 +62,7 @@ void chessBoard::setupBoard(){
     }
 }
 
+
 void chessBoard::displayBoard(){
     setupBoard();
     cout << endl;
@@ -90,5 +91,5 @@ void chessBoard::displayBoard(){
 }
 
 void chessBoard::movePiece(int sourceX, int sourceY, int targetX, int targetY){
-    
+    //To implement
 }
