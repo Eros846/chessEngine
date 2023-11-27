@@ -4,4 +4,6 @@ Makefile
 cmake_install.cmake
 a.out
 playChess
+chessGame
+test
 .vscode/
