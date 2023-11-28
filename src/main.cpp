@@ -2,7 +2,7 @@
 #include <string>
 #include <set>
 
-#include "../header/chessBoard.hpp"
+#include "../header/chessGame.hpp"
 
 using namespace std;
 
@@ -24,6 +24,9 @@ int main()
     string user2Password = " ";         //dont need?
     bool user1Valid = false;
     bool user2Valid = false;
+
+    chessGame chess;
+
 
     cout << "Hello, welcome to our chess game!" << endl << endl;
     while(userValid == false)                                                                   //while user input is invalid, keep asking for valid input
@@ -132,6 +135,7 @@ int main()
                 }
                 }
 
+                // chess.startGame();
                 board.displayBoard();
                 user1Valid = false;                                                                              //
                 user2Valid = false;                                                                             //Reset for future games in the same terminal
