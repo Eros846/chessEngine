@@ -8,8 +8,24 @@ King::King(Color col){
 }
 
 bool King::canMoveTo(int sourceX, int sourceY, int targetX, int targetY, const chessBoard& board) const{
-    //To implement
-    return true;
+    // Calculate the differences in x and y coordinates
+    int deltaX = abs(targetX - sourceX);
+    int deltaY = abs(targetY - sourceY);
+
+    // The king moves one square in any direction
+    bool isOneSquareMove = (deltaX <= 1 && deltaY <= 1);
+
+    // Check that the move is a one-square move and not to the same square it's already on
+    if (isOneSquareMove && (deltaX != 0 || deltaY != 0)) {
+        // check the target square is not occupied by a piece of the same color
+        Piece* targetPiece = board.getSquare(targetX, targetY)->getPiece();
+        if (targetPiece == nullptr || targetPiece->getColor() != this->getColor()) {
+            return true; // move is valid
+        }
+    }
+
+    // If not a one-square move, it's invalid
+    return false;
 }
 
 string King::getSymbol() const{
