@@ -2,7 +2,8 @@ CMAKE_MINIMUM_REQUIRED(VERSION 2.8...3.13)
 project(chessGame)
 
 ADD_EXECUTABLE(playChess
-piecesSrc/bishop.cpp
+
+    piecesSrc/bishop.cpp
     chessGameSrc/chessBoard.cpp
     piecesSrc/king.cpp
     piecesSrc/knight.cpp
@@ -13,4 +14,7 @@ piecesSrc/bishop.cpp
     piecesSrc/rook.cpp
     chessGameSrc/square.cpp
     chessGameSrc/chessGame.cpp 
+    
 )
+
+
