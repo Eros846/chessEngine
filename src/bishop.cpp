@@ -13,7 +13,7 @@ bool Bishop::canMoveTo(int sourceX, int sourceY, int targetX, int targetY, const
 // The reason this works is because to move diagonally if you shift two steps rights, you must shift two steps up to
 // be in diagonal
     if (abs(targetX - sourceX) != abs(targetY - sourceY)) {
-        return false; // Not moving diagonally
+        return false; // not moving diagonally
     }
 
     // Determine the direction of movement
