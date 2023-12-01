@@ -6,7 +6,9 @@
 class chessGame{
     private:
     chessBoard Chessboard;
+    bool gameStatus;
     public:
+    chessGame()
     void startGame();
     bool makeMove();
     void checkGameStatus();
