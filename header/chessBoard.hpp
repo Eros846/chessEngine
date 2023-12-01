@@ -12,7 +12,7 @@ private:
 public:
   chessBoard();
   ~chessBoard();
-  Square* getSquare(int row, int col);
+  Square* getSquare(int row, int col) const;
   void displayBoard();
   void setupBoard();
 

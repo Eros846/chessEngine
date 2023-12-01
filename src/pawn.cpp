@@ -8,7 +8,7 @@ Pawn::Pawn(Color col){
 }
 
 bool Pawn::canMoveTo(int sourceX, int sourceY, int targetX, int targetY, const chessBoard& board) const{
-    //To implement
+    //To implement;
     return true;
 }
 

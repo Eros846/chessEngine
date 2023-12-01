@@ -22,7 +22,7 @@ chessBoard::~chessBoard(){
 
 }
 
-Square* chessBoard::getSquare(int row, int col) {
+Square* chessBoard::getSquare(int row, int col) const {
    if (row >= 0 && row < 8 && col >= 0 && col < 8){
        return board[row][col].get();
    }
@@ -62,6 +62,7 @@ void chessBoard::setupBoard(){
     }
 }
 
+
 void chessBoard::displayBoard(){
     setupBoard();
     cout << endl;
@@ -90,5 +91,5 @@ void chessBoard::displayBoard(){
 }
 
 void chessBoard::movePiece(int sourceX, int sourceY, int targetX, int targetY){
-    
+    //To implement
 }

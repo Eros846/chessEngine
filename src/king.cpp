@@ -16,7 +16,6 @@ string King::getSymbol() const{
     return color == Color::White ? "K" : "k";
 }
 
-
 /* 
 1) User enters a move 
 2) The move is validated first 
