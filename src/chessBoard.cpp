@@ -22,7 +22,7 @@ chessBoard::~chessBoard(){
 
 }
 
-Square* chessBoard::getSquare(int row, int col) {
+Square* chessBoard::getSquare(int row, int col) const {
    if (row >= 0 && row < 8 && col >= 0 && col < 8){
        return board[row][col].get();
    }
