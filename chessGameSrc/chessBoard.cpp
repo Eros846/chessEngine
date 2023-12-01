@@ -1,10 +1,10 @@
-#include "../header/chessBoard.hpp"
-#include "../header/pawn.hpp"
-#include "../header/bishop.hpp"
-#include "../header/king.hpp"
-#include "../header/queen.hpp"
-#include "../header/knight.hpp"
-#include "../header/rook.hpp"
+#include "../chessGameHeader/chessBoard.hpp"
+#include "../piecesHeader/pawn.hpp"
+#include "../piecesHeader/bishop.hpp"
+#include "../piecesHeader/king.hpp"
+#include "../piecesHeader/queen.hpp"
+#include "../piecesHeader/knight.hpp"
+#include "../piecesHeader/rook.hpp"
 
 #include <iostream>
 using namespace std;

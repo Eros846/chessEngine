@@ -1,4 +1,4 @@
-#include "../header/pawn.hpp"
+#include "../piecesHeader/pawn.hpp"
 
 Pawn::~Pawn(){
 }

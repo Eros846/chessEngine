@@ -1,4 +1,4 @@
-#include "../header/king.hpp"
+#include "../piecesHeader/king.hpp"
 
 King::~King(){
 }

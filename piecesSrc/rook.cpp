@@ -1,4 +1,4 @@
-#include "../header/rook.hpp"
+#include "../piecesHeader/rook.hpp"
 
 Rook::~Rook(){
 }

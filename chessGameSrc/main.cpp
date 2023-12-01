@@ -2,7 +2,7 @@
 #include <string>
 #include <set>
 
-#include "../header/chessGame.hpp"
+#include "../chessGameHeader/chessGame.hpp"
 
 using namespace std;
 

@@ -1,4 +1,4 @@
-#include "../header/bishop.hpp"
+#include "../piecesHeader/bishop.hpp"
 
 Bishop::~Bishop(){
 }
@@ -12,6 +12,7 @@ bool Bishop::canMoveTo(int sourceX, int sourceY, int targetX, int targetY, const
 // Check if the move is a diagonal move
 // The reason this works is because to move diagonally if you shift two steps rights, you must shift two steps up to
 // be in diagonal
+    
     if (abs(targetX - sourceX) != abs(targetY - sourceY)) {
         return false; // not moving diagonally
     }
@@ -29,6 +30,12 @@ bool Bishop::canMoveTo(int sourceX, int sourceY, int targetX, int targetY, const
         }
         x += deltaX;
         y += deltaY;
+    }
+
+    //Check if the target is not the same color
+    Piece* targetPiece = board.getSquare(targetX, targetY)->getPiece();
+    if (targetPiece != nullptr && targetPiece->getColor() == this->getColor()) {
+        return false;
     }
 
     return true; // Path is clear, move is valid

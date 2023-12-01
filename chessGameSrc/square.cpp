@@ -1,4 +1,4 @@
-#include "../header/square.hpp"
+#include "../chessGameHeader/square.hpp"
 
 Square::Square() : row(0), col(0), pieceType(nullptr) {}
 

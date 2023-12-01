@@ -1,7 +1,8 @@
 #ifndef SQUARE_HPP
 #define SQUARE_HPP
 
-#include "piece.hpp"
+#include "../piecesHeader/piece.hpp"
+
 #include <memory>
 
 class Piece;

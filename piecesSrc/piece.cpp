@@ -1,4 +1,4 @@
-#include "../header/piece.hpp"
+#include "../piecesHeader/piece.hpp"
 
 Piece::Piece(){
     color = Color::none;

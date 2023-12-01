@@ -1,4 +1,4 @@
-#include "../header/knight.hpp"
+#include "../piecesHeader/knight.hpp"
 
 Knight::~Knight(){
 }

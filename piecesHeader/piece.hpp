@@ -1,7 +1,7 @@
 #ifndef PIECE_HPP
 #define PIECE_HPP
 
-#include "chessBoard.hpp"
+#include "../chessGameHeader/chessGame.hpp"
 
 #include <string>
 #include <memory>

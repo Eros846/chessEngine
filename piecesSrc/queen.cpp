@@ -1,4 +1,4 @@
-#include "../header/queen.hpp"
+#include "../piecesHeader/queen.hpp"
 
 Queen::~Queen(){
 }
