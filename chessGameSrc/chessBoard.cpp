@@ -93,3 +93,21 @@ void chessBoard::displayBoard(){
 void chessBoard::movePiece(int sourceX, int sourceY, int targetX, int targetY){
     //To implement
 }
+
+bool chessBoard::EnPassantPossible(int sourceX, int sourceY, int targetX, int targetY){
+    return false;
+}
+
+void chessBoard::perfomEnPassant(int sourceX, int sourceY, int targetX, int targetY) {
+
+}
+
+bool chessBoard::pawnPromotionPossible(int sourceX, int sourceY, int targetX, int targetY){
+    return false;
+}
+
+void chessBoard::performPawnPromotion(int sourceX, int sourceY, int targetX, int targetY){
+
+}
+
+

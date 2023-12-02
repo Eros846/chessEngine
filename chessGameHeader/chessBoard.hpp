@@ -5,6 +5,7 @@
 #include "square.hpp"
 
 class Square;
+
 class chessBoard{
 private:
   std::unique_ptr<Square> board[8][8];
@@ -18,6 +19,23 @@ public:
 
   //newFunction
   void movePiece(int sourceX, int sourceY, int targetX, int targetY);
+  void capture(int sourceX, int sourceY, int targetX, int targetY);
+
+  
+
+  //additional functions for pawn 
+  bool EnPassantPossible(int sourceX, int sourceY, int targetX, int targetY);
+  void perfomEnPassant(int sourceX, int sourceY, int targetX, int targetY);
+  bool pawnPromotionPossible(int sourceX, int sourceY, int targetX, int targetY);
+  void performPawnPromotion(int sourceX, int sourceY, int targetX, int targetY);
+
+
+  //additional functions for king
+  bool willRemoveCheck(int sourceX, int sourceY, int targetX, int targetY, int kingX, int kingY) const ;
+  bool willKingGetChecked(int sourceX, int sourceY, int targetX, int targetY, int kingX, int kingY) const ;
+  bool isKingChecked(int sourceX, int sourceY, int targetX, int targetY, int kingX, int kingY) const ;
+
+
 };
 
 
