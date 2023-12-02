@@ -151,6 +151,7 @@ int main()
                     {   
                         while(user1PValid == false)
                         {
+
                             cout << "Player 1, enter the row of the white piece you want to move:";
                             cin >> userPiece1;
                             cout << "Player 1, enter the column of the white piece you want to move:";
@@ -170,6 +171,7 @@ int main()
                         cout << "Player 1, enter the column where you want to move " << userMove2 << ": ";
                         cin >> userMove2;
                         game1.makeMove(userPiece1, userPiece2, userMove1, userMove2, user1PValid);
+
                         //function prints updated board after user move, needs to check after every move. Otherwise, player can make a move after a "checkmate" has already happened
                         userMoveCounter++;
                     }
@@ -182,6 +184,7 @@ int main()
                             cout << "Player 2, enter the column of the black piece you want to move:";
                             cin >> userPiece2;
                             if(game1.board[userPiece1][userPiece2].color == "Black")       //use the two characters in string user input as row/col for the matrix
+
                             {
                                 user2PValid = true;
                             }
@@ -196,6 +199,7 @@ int main()
                         cout << "Player 2, enter the column where you want to move " << userMove2 << ": ";
                         cin >> userMove2;
                         game1.makeMove(userPiece1, userPiece2, userMove1, userMove2, user2PValid);
+
                         //function prints updated board after user move, needs to check after every move. Otherwise, player can make a move after a "checkmate" has already happened
                         userMoveCounter++;
                     }
