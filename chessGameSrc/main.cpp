@@ -157,7 +157,7 @@ int main()
                         while(user1PValid == false)
                         {
                             cout << "Player 1, enter the white piece you want to move:";
-                            cin << user1Piece;
+                            cin >> user1Piece;
                             if(board1[user1Piece[0]][user1Piece[1]].color == "White")       //use the two characters in string user input as row/col for the matrix
                             {
                                 user1PValid = true;
@@ -193,7 +193,7 @@ int main()
                             //check valid, check user piece color is black
                         }
                         cout << "Player 2, enter the where you want to move " << user2Piece << ": ";
-                        cin << user2Move;
+                        cin >> user2Move;
                         //check valid? should check in virtual move function
                         game1.makeMove(user2Piece, user2Move);
                         //function prints updated board after user move, needs to check after every move. Otherwise, player can make a move after a "checkmate" has already happened
