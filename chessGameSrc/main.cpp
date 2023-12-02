@@ -25,8 +25,6 @@ int main()
     bool user1Valid = false;
     bool user2Valid = false;
 
-    chessGame chess;
-
 
     cout << "Hello, welcome to our chess game!" << endl << endl;
     while(userValid == false)                                                                   //while user input is invalid, keep asking for valid input
@@ -97,7 +95,6 @@ int main()
 
             if (userOption == '3')
             {
-                chessBoard board;
                 cout << "You entered option 3." << endl;
                 while (user1Valid == false)
                 {
@@ -137,28 +134,28 @@ int main()
                 
                 //Now that users have been validated, start chess game
                 chessGame game1;
-                chessBoard board1;
                 int userMoveCounter = 1;
-                string user1Piece = "";
+                int userPiece1;
+                int userPiece2;
+                int userMove1;
+                int userMove2;
                 bool user1PValid = false;
-                string user1Move = "";
                 bool user1MValid = false;
-                string user2Piece = "";
                 bool user2PValid = false;
-                string user2Move = "";
                 bool user2MValid = false;
-                vector<string> moveHistory;
 
-                while(game1.checkGameStatus() == false)         // signals the game has not ended
+                while(gameStatus::IN_PROGRESS == game1.getGameStatus())         // signals the game has not ended
                 {
                     game1.startGame();
                     if(userMoveCounter % 2 == 1)
                     {   
                         while(user1PValid == false)
                         {
-                            cout << "Player 1, enter the white piece you want to move:";
-                            cin << user1Piece;
-                            if(board1[user1Piece[0]][user1Piece[1]].color == "White")       //use the two characters in string user input as row/col for the matrix
+                            cout << "Player 1, enter the row of the white piece you want to move:";
+                            cin >> userPiece1;
+                            cout << "Player 1, enter the column of the white piece you want to move:";
+                            cin >> userPiece2;
+                            if(game1.board[userPiece1][userPiece2].color == "White")       //use the two characters in string user input as row/col for the matrix
                             {
                                 user1PValid = true;
                             }
@@ -168,47 +165,43 @@ int main()
                                 cout << "Please enter a valid white piece!" << endl;
                             }
                         }
-                        cout << "Player 1, enter the where you want to move " << user1Piece << ": ";
-                        cin << user1Move;
-                        //check valid? should check in virtual move function
-                        game1.makeMove(user1Piece, user1Move);
+                        cout << "Player 1, enter the row where you want to move " << userMove1 << ": ";
+                        cin >> userMove1;
+                        cout << "Player 1, enter the column where you want to move " << userMove2 << ": ";
+                        cin >> userMove2;
+                        game1.makeMove(userPiece1, userPiece2, userMove1, userMove2, user1PValid);
                         //function prints updated board after user move, needs to check after every move. Otherwise, player can make a move after a "checkmate" has already happened
-                        moveHistory.push_back(user1Piece);
-                        moveHistory.push_back(user1Move);
+                        userMoveCounter++;
                     }
                     if(userMoveCounter % 2 == 0)
                     {
                         while(user2PValid == false)
                         {
-                            cout << "Player 2, enter the black piece you want to move:";
-                            cin << user2Piece;
-                            if(board1[user2Piece[0]][user2Piece[1]].color == "Black")
+                            cout << "Player 2, enter the row of the black piece you want to move:";
+                            cin >> userPiece1;
+                            cout << "Player 2, enter the column of the black piece you want to move:";
+                            cin >> userPiece2;
+                            if(game1.board[userPiece1][userPiece2].color == "Black")       //use the two characters in string user input as row/col for the matrix
                             {
                                 user2PValid = true;
                             }
+                            //check valid, check user piece color is black
                             else
                             {
                                 cout << "Please enter a valid black piece!" << endl;
                             }
-                            //check valid, check user piece color is black
                         }
-                        cout << "Player 2, enter the where you want to move " << user2Piece << ": ";
-                        cin << user2Move;
-                        //check valid? should check in virtual move function
-                        game1.makeMove(user2Piece, user2Move);
+                        cout << "Player 2, enter the row where you want to move " << userMove1 << ": ";
+                        cin >> userMove1;
+                        cout << "Player 2, enter the column where you want to move " << userMove2 << ": ";
+                        cin >> userMove2;
+                        game1.makeMove(userPiece1, userPiece2, userMove1, userMove2, user2PValid);
                         //function prints updated board after user move, needs to check after every move. Otherwise, player can make a move after a "checkmate" has already happened
-                        moveHistory.push_back(user2Piece);
-                        moveHistory.push_back(user2Move);
+                        userMoveCounter++;
                     }
                 }
                 //Print match history after match is over
-                cout << "Match move history: " << endl;
-                for (int i = 0; i < moveHistory.size(); i++)
-                {
-                    cout << moveHistory[i] << endl;
-                }
-
-                board.displayBoard();
+                game1.printMoveHistory();
                 user1Valid = false;                                                                              //
                 user2Valid = false;                                                                             //Reset for future games in the same terminal
             }
