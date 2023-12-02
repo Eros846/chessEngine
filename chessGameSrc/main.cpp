@@ -134,8 +134,80 @@ int main()
                     user2Valid = true;
                 }
                 }
+                
+                //Now that users have been validated, start chess game
+                chessGame game1;
+                chessBoard board1;
+                int userMoveCounter = 1;
+                string user1Piece = "";
+                bool user1PValid = false;
+                string user1Move = "";
+                bool user1MValid = false;
+                string user2Piece = "";
+                bool user2PValid = false;
+                string user2Move = "";
+                bool user2MValid = false;
+                vector<string> moveHistory;
 
-                // chess.startGame();
+                while(game1.checkGameStatus() == false)         // signals the game has not ended
+                {
+                    game1.startGame();
+                    if(userMoveCounter % 2 == 1)
+                    {   
+                        while(user1PValid == false)
+                        {
+                            cout << "Player 1, enter the white piece you want to move:";
+                            cin << user1Piece;
+                            if(board1[user1Piece[0]][user1Piece[1]].color == "White")       //use the two characters in string user input as row/col for the matrix
+                            {
+                                user1PValid = true;
+                            }
+                            //check valid, check user piece color is white
+                            else
+                            {
+                                cout << "Please enter a valid white piece!" << endl;
+                            }
+                        }
+                        cout << "Player 1, enter the where you want to move " << user1Piece << ": ";
+                        cin << user1Move;
+                        //check valid? should check in virtual move function
+                        game1.makeMove(user1Piece, user1Move);
+                        //function prints updated board after user move, needs to check after every move. Otherwise, player can make a move after a "checkmate" has already happened
+                        moveHistory.push_back(user1Piece);
+                        moveHistory.push_back(user1Move);
+                    }
+                    if(userMoveCounter % 2 == 0)
+                    {
+                        while(user2PValid == false)
+                        {
+                            cout << "Player 2, enter the black piece you want to move:";
+                            cin << user2Piece;
+                            if(board1[user2Piece[0]][user2Piece[1]].color == "Black")
+                            {
+                                user2PValid = true;
+                            }
+                            else
+                            {
+                                cout << "Please enter a valid black piece!" << endl;
+                            }
+                            //check valid, check user piece color is black
+                        }
+                        cout << "Player 2, enter the where you want to move " << user2Piece << ": ";
+                        cin << user2Move;
+                        //check valid? should check in virtual move function
+                        game1.makeMove(user2Piece, user2Move);
+                        //function prints updated board after user move, needs to check after every move. Otherwise, player can make a move after a "checkmate" has already happened
+                        moveHistory.push_back(user2Piece);
+                        moveHistory.push_back(user2Move);
+                    }
+                }
+                //Print match history after match is over
+                cout << "Match move history: " << endl;
+                for (int i = 0; i < moveHistory.size(); i++)
+                {
+                    cout << moveHistory[i] << endl;
+                }
+
                 board.displayBoard();
                 user1Valid = false;                                                                              //
                 user2Valid = false;                                                                             //Reset for future games in the same terminal
