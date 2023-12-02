@@ -83,7 +83,7 @@ void chessGame::makeMove(int sourceX, int sourceY, int targetX, int targetY, boo
        if(board.get()->pawnPromotionPossible(sourceX, sourceY, targetX, targetY)){
            board.get()->performPawnPromotion(sourceX, sourceY, targetX, targetY);
            moves.push_back(getStringOfMove(targetX, targetY));
-           lastMove() = true;
+           lastMove = true;
            return;
        }
 
