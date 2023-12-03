@@ -24,6 +24,7 @@ int main()
     string user2Password = " ";         //dont need?
     bool user1Valid = false;
     bool user2Valid = false;
+    chessGame game1;
 
 
     cout << "Hello, welcome to our chess game!" << endl << endl;
@@ -221,7 +222,6 @@ int main()
                 userValid = true;
             }
         }
+         return 0;
     }
     
-    return 0;
-}
