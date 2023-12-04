@@ -23,7 +23,11 @@ ADD_EXECUTABLE(runPiecesTest
     
     #Add test file from piecesFolder here to test
     testPieces/rookTest.cpp
-
+    testPieces/bishopTest.cpp
+    testPieces/kingTest.cpp
+    testPieces/knightTest.cpp
+    testPieces/pawnTest.cpp
+    testPieces/queenTest.cpp
 
     #Don't change this 
     piecesSrc/bishop.cpp
