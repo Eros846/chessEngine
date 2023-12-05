@@ -13,7 +13,11 @@ int Square::getCol(){
 }
 
 Piece* Square::getPiece(){
-   return this->pieceType.get();
+  if (pieceType) {  // Check if pieceType holds an object
+        return pieceType.get();  // Return the pointer if a piece exists
+    } else {
+        return nullptr;  // Explicitly return nullptr if no piece exists
+    }
 }
 
 void Square::setPiece(Piece* p){

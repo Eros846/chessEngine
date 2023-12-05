@@ -17,10 +17,10 @@ chessBoard::chessBoard() {
    }
 }
 
-chessBoard::~chessBoard(){
+// chessBoard::~chessBoard(){
 
 
-}
+// }
 
 Square* chessBoard::getSquare(int row, int col) const {
    if (row >= 0 && row < 8 && col >= 0 && col < 8){
@@ -64,7 +64,7 @@ void chessBoard::setupBoard(){
 
 
 void chessBoard::displayBoard(){
-    setupBoard();
+    // setupBoard();
     cout << endl;
     cout << "   a b c d e f g h" << endl;
     cout << endl;
@@ -90,10 +90,35 @@ void chessBoard::displayBoard(){
    cout << endl;
 }
 
+void chessBoard::displayBoardFromBlackSide(){
+    cout << endl;
+    cout << "   h g f e d c b a" << endl; // Reverse the order of columns
+    cout << endl;
+    for (int i = 7; i >= 0; --i) { // Start from the last row
+        cout << i + 1 << "  "; // Row numbers
+        for (int j = 7; j >= 0; --j) { // Start from the last column
+            Square* currSquare = board[i][j].get();
+            Piece* currPiece = currSquare->getPiece();
+
+            if (currPiece != nullptr) {
+                cout << currPiece->getSymbol() << " ";
+            } else {
+                cout << "x ";
+            }
+        }
+        cout << " " << i + 1;
+        cout << endl;
+    }
+    cout << endl;
+    cout << "   h g f e d c b a" << endl; // Reverse the order of columns
+    cout << endl;
+}
+
 void chessBoard::movePiece(int sourceX, int sourceY, int targetX, int targetY){
     Piece* toMovePiece = this->getSquare(sourceX, sourceY)->getPiece();
     this->getSquare(targetX, targetY)->setPiece(toMovePiece);
     this->getSquare(sourceX, sourceY)->clearSquare();
+    displayBoard();
 }
 
 void chessBoard::capture(int sourceX, int sourceY, int targetX, int targetY){
@@ -121,7 +146,7 @@ void chessBoard::performPawnPromotion(int sourceX, int sourceY, int targetX, int
 
 bool chessBoard::willRemoveCheck(int sourceX, int sourceY, int targetX, int targetY, int kingX, int kingY) const{
     //To implement
-    return false;
+    return true;
 }
 bool chessBoard::willKingGetChecked(int sourceX, int sourceY, int targetX, int targetY, int kingX, int kingY) const{
     //To implement

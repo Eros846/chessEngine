@@ -14,10 +14,11 @@ private:
 
 public:
   chessBoard();
-  ~chessBoard();
   Square* getSquare(int row, int col) const;
   void displayBoard();
+  void displayBoardFromBlackSide();
   void setupBoard();
+
 
   //newFunction
   void movePiece(int sourceX, int sourceY, int targetX, int targetY);

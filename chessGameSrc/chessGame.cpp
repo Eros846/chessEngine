@@ -32,12 +32,28 @@
 
     void chessGame::makeMove(int sourceX, int sourceY, int targetX, int targetY, bool white) {
 
-      Piece * sourcePiece = board.get() -> getSquare(sourceX, sourceY) -> getPiece();
-      Piece * targetPiece = board.get() -> getSquare(targetX, targetY) -> getPiece();
+      //Check coordinates in bound
 
-      if (sourcePiece == nullptr) {
-        cout << "There is no piece to make a move. Please check your board." << endl;
-        lastMove = false;
+      //Declare the pointers
+      Piece * sourcePiece;
+      Piece * targetPiece;
+
+      //Checking if the source is empty
+      if(board.get() -> getSquare(sourceX, sourceY)->isEmpty()) {
+          cout << "There is no piece to make a move. Please check your board." << endl;
+          lastMove = false;
+          return;
+
+
+      } else {
+        sourcePiece = board.get() -> getSquare(sourceX, sourceY) -> getPiece();
+      }
+
+      if(board.get() -> getSquare(targetX, targetY)->isEmpty()){
+        targetPiece =nullptr;
+      }
+      else{
+        targetPiece = board.get() -> getSquare(targetX, targetY) -> getPiece();
       }
 
       if (targetPiece != nullptr && targetPiece -> getColor() == sourcePiece -> getColor()) {
@@ -61,6 +77,10 @@
           }
         }
       }
+
+      //Test case; 
+      lastMove = true;
+      board.get()->movePiece(sourceX, sourceY,  targetX,  targetY);
 
       if (white) {
         //implement white king's function
@@ -89,15 +109,14 @@
 
     //     void updateGameStatus();
 
-    void chessGame::updateGameStatus() {
-        //To implement
+    void chessGame::updateGameStatus(gameStatus status) {
+        gameStatusNow = status;
     }
 
     //     gameStatus getGameStatus() const;
 
     gameStatus chessGame::getGameStatus() const {
-      //To implement
-      return gameStatus::IN_PROGRESS;
+      return gameStatusNow;
     }
 
     string chessGame::getStringOfMove(int targetX, int targetY) const {
@@ -109,9 +128,7 @@
 
       // Construct the string representing the move
       string moveString = charX + to_string(positionY);
-
       return moveString;
-
     }
 
     //     void addMoves(int col, int row);
@@ -144,5 +161,38 @@
     }
 
     void chessGame::updateKingPosition(Color col, int x, int y) {
-      //To implement
+       if(Color::Black == col){
+        blackKingPosition.first = x;
+        blackKingPosition.second = y;
+       }
+       else if(Color::White == col) {
+        whiteKingPosition.first = x;
+        whiteKingPosition.second = x;
+       }
+    }
+
+    void chessGame::updateCaptured(Color col ,string piece){
+      //Passed in what was in the target piece;
+      if(col == Color::White){
+        player2Captured.push_back(piece);
+      }
+      else if(col == Color::Black) {
+        player1Captured.push_back(piece);
+      }
+    }
+
+    void chessGame::printCapturedPieces(bool white){
+      vector<string> toPrint;
+      if(white){
+        toPrint = player1Captured;
+      }
+      else {
+        toPrint =player2Captured;
+      }
+
+      for (int i = 0; i < toPrint.size(); ++i) {
+        cout << toPrint[i];
+        cout << " "; 
+    }
+    cout << endl;
     }

@@ -25,18 +25,24 @@ class chessGame{
    std::pair<int, int> blackKingPosition;
    vector<string> moves;
    bool lastMove;
+   gameStatus gameStatusNow;
+   vector<string> player1Captured;
+   vector<string> player2Captured;
 
    public:
    chessGame();
    void startGame();
    void makeMove(int sourceX, int sourceY, int targetX, int targetY, bool white);
-   void updateGameStatus();
+   void updateGameStatus(gameStatus status);
    gameStatus getGameStatus() const;
    void addMoves(int row, int col);
    void printMoveHistory();
    string getStringOfMove(int targetX, int targetY) const;
    bool moveSucess();
    void updateKingPosition(Color color, int x, int y);
+   void updateCaptured(Color col, string piece);
+   void printCapturedPieces(bool white);
+   
 
 
 };
