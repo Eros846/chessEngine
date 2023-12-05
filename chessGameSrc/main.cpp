@@ -62,7 +62,7 @@ void playGame() {
         if (sourcePiece.length() == 7) {
           goto askSourcePiece;
         }
-        cout << sourcePiece;
+        // cout << sourcePiece;
 
         userPiece1 = int(sourcePiece[0]);
         userPiece2 = int(sourcePiece[1]);
