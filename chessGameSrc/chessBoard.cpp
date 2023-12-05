@@ -91,23 +91,44 @@ void chessBoard::displayBoard(){
 }
 
 void chessBoard::movePiece(int sourceX, int sourceY, int targetX, int targetY){
+    Piece* toMovePiece = this->getSquare(sourceX, sourceY)->getPiece();
+    this->getSquare(targetX, targetY)->setPiece(toMovePiece);
+    this->getSquare(sourceX, sourceY)->clearSquare();
+}
+
+void chessBoard::capture(int sourceX, int sourceY, int targetX, int targetY){
     //To implement
 }
 
+
 bool chessBoard::EnPassantPossible(int sourceX, int sourceY, int targetX, int targetY){
+    //To implement
     return false;
 }
 
 void chessBoard::perfomEnPassant(int sourceX, int sourceY, int targetX, int targetY) {
-
+    //To implement
 }
 
 bool chessBoard::pawnPromotionPossible(int sourceX, int sourceY, int targetX, int targetY){
+    //To implement
     return false;
 }
 
 void chessBoard::performPawnPromotion(int sourceX, int sourceY, int targetX, int targetY){
-
+    //To implement
 }
 
+bool chessBoard::willRemoveCheck(int sourceX, int sourceY, int targetX, int targetY, int kingX, int kingY) const{
+    //To implement
+    return false;
+}
+bool chessBoard::willKingGetChecked(int sourceX, int sourceY, int targetX, int targetY, int kingX, int kingY) const{
+    //To implement
+    return false;
+}
+bool chessBoard::isKingChecked(int sourceX, int sourceY, int targetX, int targetY, int kingX, int kingY) const {
+    //To implement
+    return false;
+}
 
