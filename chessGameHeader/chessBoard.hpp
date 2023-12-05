@@ -6,6 +6,8 @@
 
 class Square;
 
+// enum class Color {Black, White, none};
+
 class chessBoard{
 private:
   std::unique_ptr<Square> board[8][8];

@@ -10,7 +10,7 @@
 
 
 class chessBoard;
-
+enum class Color;
 
 enum class gameStatus {IN_PROGRESS, CHECKMATE, DRAW, STALEMATE};
 
@@ -25,29 +25,18 @@ class chessGame{
    std::pair<int, int> blackKingPosition;
    vector<string> moves;
    bool lastMove;
-  
-
 
    public:
    chessGame();
-  
    void startGame();
    void makeMove(int sourceX, int sourceY, int targetX, int targetY, bool white);
    void updateGameStatus();
    gameStatus getGameStatus() const;
-   void addMoves(int col, int row);
+   void addMoves(int row, int col);
    void printMoveHistory();
    string getStringOfMove(int targetX, int targetY) const;
    bool moveSucess();
-
-
-   //void updateKingPosition(Color color, int x, int y);
-
-
-
-
-
-
+   void updateKingPosition(Color color, int x, int y);
 
 
 };
