@@ -3,9 +3,8 @@
  
  Authors: \[Martin De Guzman](https://github.com/KuYuh02),  \[David Aispuro](https://github.com/DavidA346),  \[Michael Mihalovich](https://github.com/michaelm015),  \[Sarik Raj Karki](https://github.com/Eros846)
 
-## Phase I
 ## Project Description
- * One of the reasons this project is interesting is it exposes us to working with back end development. It also deals with security via account information and is an exciting challenge. We also love the fact that despite chess being a simple game, there is a lot of features we can implement features to make it more convenenient, entertaining, etc. Features that are not possible to implement in real life chess. 
+ * One of the reasons this project is interesting is it exposes us to working with back end development. We also love the fact that despite chess being a simple game, there is a lot of features we can implement features to make it more convenenient, entertaining, etc. Features that are not possible to implement in real life chess. 
  * We plan to code our backend/the main game in C++ and the game will run two local players in the console.
  * The project will take many different inputs. For example, when in the create profile menu option, it will take user login inforomation such as username and password. As for the game itself, the user will type the piece they want to move and where on the board to move it.  
  * The project an in console main menu which has options to make an account, learn the rules of chess, and host the main game. The main chess game will have the same rules of chess.
@@ -13,7 +12,6 @@
  * The input for this project will be accomplished through the user keyboard. The user will also need to input for every turn they wish to complete and the output will be that move displayed on the screen. (see diagram below for more details)
 
 
- ## Phase II
 ## User Interface Specification
 
 ### Navigation Diagram
@@ -47,7 +45,6 @@ Key Features:
 ![IMG_0117](https://github.com/cs100/final-project-mdeg011-skark010-daisp002-mmiha004/assets/88258745/718ebf95-f786-4772-aeab-d52006fc5d8c)
 
 
- ## Phase III
 ## Updated Class Diagram and SOLID Principles
 
 ### Revised Class Diagram
@@ -68,9 +65,23 @@ Key Features:
  > * Make sure your README file and Project board are up-to-date reflecting the current status of your project (e.g. any changes that you have made during the project such as changes to your class diagram). Previous versions should still be visible through your commit history. 
  
  ## Screenshots
- > Screenshots of the input/output after running your application
+![image](https://github.com/cs100/final-project-mdeg011-skark010-daisp002-mmiha004/assets/57105334/dcaa3512-7a32-499a-a270-b22feca65bd9)
+![image](https://github.com/cs100/final-project-mdeg011-skark010-daisp002-mmiha004/assets/57105334/6e523c81-4cf8-4430-8071-4aaa499e891a)
+![image](https://github.com/cs100/final-project-mdeg011-skark010-daisp002-mmiha004/assets/57105334/5f123ca5-3a2c-42e4-9a34-df2d125084ef)
+
  ## Installation/Usage
- > Instructions on installing and running your application
- ## Testing
- > How was your project tested/validated? If you used CI, you should have a "build passing" badge in this README.
+ ### Installation
+ ### Windows/Linux
+  Download a C++ code editor such as Visual Studio Code or Eclipse.
+ <br> Git clone this repository onto your desired code editor.  
+  After this, you should have everything installed to run our chess game. 
+ ### Running
+ To run our chess game, run:
+ <br> cmake .
+ <br> make
+ <br> ./playChess
+ <br> After this, the menu will tell you everything you need to play the game. Have fun!
+ ## Testing/Validation
+ For validation, every input from the user is validated. From the choice in the main menu to checking if the user made a valid move with the piece they chose. 
+ <br> To test our functions, we used the Googletest framework. This public framework developed by google allows us to test internal functions in our program. The main tests we implemented check whether the pieces move correctly, correctly show/give error based on input, and make sure the prints accurately reflect the board/move history. Ultimately, the tests correctly passed and failed when needed showing correct implementation of our class methods. 
  
