@@ -26,6 +26,7 @@ int main()
     string player2Password = " ";        
     bool user1Valid = false;
     bool user2Valid = false;
+    chessGame game1;
 
     chessGame game1;
     int userMoveCounter = 1;
@@ -233,8 +234,10 @@ int main()
                 cout << "You entered option 4." << endl;
                 userValid = true;
             }
+
         
     }
     
     return 0;
 }
+
