@@ -28,7 +28,7 @@ TEST(QueenTests, testConstructorNone)
 // {
 //     Bishop* bishop1 = new Bishop(Color::White);
 //     chessBoard* board = new chessBoard();
-//     board[7][2]->setPiece(bishop1);
+//     board[7][2].setPiece(bishop1);
 //     EXPECT_EQ(bishop1->canMoveTo(7, 2, 6, 3, &board), true);
 // }
 

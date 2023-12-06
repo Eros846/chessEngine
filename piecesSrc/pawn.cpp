@@ -25,15 +25,15 @@ bool Pawn::canMoveTo(int sourceX, int sourceY, int targetX, int targetY, const c
     }
 
     //Checks if pawn can move one space forward
-    if (deltaX == 1 && deltaY == 0 && board.getSquare(targetX, targetY)->isEmpty()) {
+    if (deltaX == 1 && deltaY == 0 && board.getSquare(targetX, targetY).isEmpty()) {
         return true;
     }
 
     //If first move then pawn can move two spaces forward
-    if (deltaX == 2 && deltaY == 0 && sourceX == 1 && direction == 1 && board.getSquare(sourceX + 1, sourceY)->isEmpty() && board.getSquare(targetX, targetY)->isEmpty()) {
+    if (deltaX == 2 && deltaY == 0 && sourceX == 1 && direction == 1 && board.getSquare(sourceX + 1, sourceY).isEmpty() && board.getSquare(targetX, targetY).isEmpty()) {
         return true;
     }
-    if (deltaX == 2 && deltaY == 0 && sourceX == 6 && direction == -1 && board.getSquare(sourceX - 1, sourceY)->isEmpty() && board.getSquare(targetX, targetY)->isEmpty()) {
+    if (deltaX == 2 && deltaY == 0 && sourceX == 6 && direction == -1 && board.getSquare(sourceX - 1, sourceY).isEmpty() && board.getSquare(targetX, targetY).isEmpty()) {
         return true;
     }
 

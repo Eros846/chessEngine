@@ -44,7 +44,7 @@ bool Rook::canMoveTo(int sourceX, int sourceY, int targetX, int targetY, const c
    int x = sourceX + deltaX;
    int y = sourceY + deltaY;
    while (x != targetX && y != targetY) {
-       if (!board.getSquare(x, y)->isEmpty()) {
+       if (!board.getSquare(x, y).isEmpty()) {
            return false; // Path is obstructed
        }
        x += deltaX;

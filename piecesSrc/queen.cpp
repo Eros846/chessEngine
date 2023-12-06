@@ -17,7 +17,7 @@ bool Queen::canMoveTo(int sourceX, int sourceY, int targetX, int targetY, const 
         
         // Traverse the path from source to target and check if it's clear
         while (x != targetX || y != targetY) {
-            if (board.getSquare(x, y)->getPiece() != nullptr) {
+            if (&board.getSquare(x, y).getPiece() != nullptr) {
                 return false; // Path is obstructed
             }
             x += stepX;
@@ -34,7 +34,7 @@ bool Queen::canMoveTo(int sourceX, int sourceY, int targetX, int targetY, const 
         
         // Traverse the path from source to target and check if it's clear
         while (x != targetX && y != targetY) {
-            if (board.getSquare(x, y)->getPiece() != nullptr) {
+            if (&board.getSquare(x, y).getPiece() != nullptr) {
                 return false; // Path is obstructed
             }
             x += stepX;
@@ -46,7 +46,7 @@ bool Queen::canMoveTo(int sourceX, int sourceY, int targetX, int targetY, const 
         return false;
     }
     
-    Piece* targetPiece = board.getSquare(targetX, targetY)->getPiece();
+    Piece* targetPiece = &board.getSquare(targetX, targetY).getPiece();
     if (targetPiece != nullptr && targetPiece->getColor() == this->getColor()) {
         return false;
     }

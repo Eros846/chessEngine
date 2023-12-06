@@ -14,7 +14,7 @@ private:
 
 public:
   chessBoard();
-  Square* getSquare(int row, int col) const;
+  Square& getSquare(int row, int col) const;
   void displayBoard();
   void displayBoardFromBlackSide();
   void setupBoard();

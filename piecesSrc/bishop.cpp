@@ -25,7 +25,7 @@ bool Bishop::canMoveTo(int sourceX, int sourceY, int targetX, int targetY, const
     int x = sourceX + deltaX;
     int y = sourceY + deltaY;
     while (x != targetX && y != targetY) {
-        if (!board.getSquare(x, y)->isEmpty()) {
+        if (!board.getSquare(x, y).isEmpty()) {
             return false; // Path is obstructed
         }
         x += deltaX;
@@ -33,7 +33,8 @@ bool Bishop::canMoveTo(int sourceX, int sourceY, int targetX, int targetY, const
     }
 
     //Check if the target is not the same color
-    Piece* targetPiece = board.getSquare(targetX, targetY)->getPiece();
+    Piece* targetPiece = &board.getSquare(targetX, targetY).getPiece();
+
     if (targetPiece != nullptr && targetPiece->getColor() == this->getColor()) {
         return false;
     }

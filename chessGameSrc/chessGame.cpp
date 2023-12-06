@@ -25,7 +25,7 @@
     //     void startGame();
     void chessGame::startGame() {
       board.get() -> setupBoard();
-      board.get() -> displayBoard();
+      board.get()->displayBoard();
     }
 
     //     void makeMove(int sourceX, int sourceY, int targetX, int targetY);
@@ -39,16 +39,36 @@
       Piece * targetPiece;
 
       //Checking if the source is empty
+      sourcePiece = &board.get()->getSquare(sourceX, sourceY).getPiece();
+      lastMove = true;
+      board.get()->movePiece(sourceX, sourceY,  targetX,  targetY);
+
+      // First, check if the square pointer is not null
+      // if (square == nullptr) {
+      //     cout << "Invalid square coordinates. Please check your input." << endl;
+      //     lastMove = false;
+      //     return;
+      // }
+  
+      // // Then check if the square is empty
+      // if (square->isEmpty()) {
+      //     cout << "There is no piece to make a move. Please check your board." << endl;
+      //     lastMove = false;
+      //     return;
+      // } else {
+      //     sourcePiece = square->getPiece();
+      // }
+/*
+
       if(board.get() -> getSquare(sourceX, sourceY)->isEmpty()) {
           cout << "There is no piece to make a move. Please check your board." << endl;
           lastMove = false;
           return;
 
-
       } else {
-        sourcePiece = board.get() -> getSquare(sourceX, sourceY) -> getPiece();
+        sourcePiece = board.get() -> getSquare(sourceX, sourceY)->getPiece();
       }
-
+      /*
       if(board.get() -> getSquare(targetX, targetY)->isEmpty()){
         targetPiece =nullptr;
       }
@@ -106,7 +126,8 @@
       }
 
     }
-
+*/
+    }
     //     void updateGameStatus();
 
     void chessGame::updateGameStatus(gameStatus status) {
