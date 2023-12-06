@@ -216,13 +216,6 @@ int main()
                         cout << "Your password is " << userPassword << ". Write it down if you need." << endl;
                     }
                 }
-
-        
-                //Test
-                for (auto itr = userProfiles.begin(); itr != userProfiles.end(); ++itr)
-                {
-                    cout << "Username: " << itr->first << " Password: " << itr->second << endl;
-                }
                 usernameValid = false;                                                                          //Reset to validate future usernames
                 passwordValid = false;
             }
