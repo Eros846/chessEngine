@@ -8,19 +8,11 @@ Pawn::Pawn(Color col){
 }
 
 bool Pawn::canMoveTo(int sourceX, int sourceY, int targetX, int targetY, const chessBoard& board) const{
-    // Calculate the differences in x and y coordinates
-    int deltaX = abs(targetX - sourceX);
-    int deltaY = abs(targetY - sourceY);
-
     // Determine whether pawn is white or black in order to determine movement
-    int direction;
+    int direction = 1;
 
-    //If white, direction is 1 otherwise its -1
+    //If white, direction is -1 otherwise its 1
     if (this->getColor() == Color::White){
-        direction = 1;
-    }
-
-    else{
         direction = -1;
     }
 

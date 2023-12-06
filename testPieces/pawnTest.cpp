@@ -23,6 +23,7 @@ TEST(PawnTests, testConstructorNone)
     ASSERT_TRUE(pawn1->getColor() == Color::none);
 }
 
+<<<<<<< HEAD
 //canMove Tests NEED TO BE IMPLEMENTED
 // TEST(BishopTests, testCanMove)
 // {
@@ -31,6 +32,93 @@ TEST(PawnTests, testConstructorNone)
 //     board[7][2].setPiece(bishop1);
 //     EXPECT_EQ(bishop1->canMoveTo(7, 2, 6, 3, &board), true);
 // }
+=======
+//canMove Tests
+//White Movement Tests
+TEST(PawnTests, testWhiteMove1FromStart)
+{
+    Pawn* Pawn1 = new Pawn(Color::White);
+    chessBoard* board = new chessBoard();
+    board->getSquare(6, 0)->setPiece(Pawn1);
+    EXPECT_EQ(Pawn1->canMoveTo(6, 0, 5, 0, *board), true);
+}
+
+TEST(PawnTests, testWhiteMove2FromStart)
+{
+    Pawn* Pawn1 = new Pawn(Color::White);
+    chessBoard* board = new chessBoard();
+    board->getSquare(6, 0)->setPiece(Pawn1);
+    EXPECT_TRUE(Pawn1->canMoveTo(6, 0, 4, 0, *board) == true);
+}
+
+TEST(PawnTests, testWhiteCanMove2FromField)
+{
+    Pawn* Pawn1 = new Pawn(Color::White);
+    chessBoard* board = new chessBoard();
+    board->getSquare(5, 0)->setPiece(Pawn1);
+    EXPECT_FALSE(Pawn1->canMoveTo(5, 0, 3, 0, *board) == true);
+}
+
+TEST(PawnTests, testWhiteMoveBackwards)
+{
+    Pawn* Pawn1 = new Pawn(Color::White);
+    chessBoard* board = new chessBoard();
+    board->getSquare(4, 3)->setPiece(Pawn1);
+    EXPECT_EQ(Pawn1->canMoveTo(4, 3, 5, 3, *board), false);
+}
+
+//Black Movement Tests
+TEST(PawnTests, testBlackMove1FromStart)
+{
+    Pawn* Pawn1 = new Pawn(Color::Black);
+    chessBoard* board = new chessBoard();
+    board->getSquare(1, 6)->setPiece(Pawn1);
+    EXPECT_EQ(Pawn1->canMoveTo(1, 6, 2, 6, *board), true);
+}
+
+TEST(PawnTests, testBlackMove2FromStart)
+{
+    Pawn* Pawn1 = new Pawn(Color::Black);
+    chessBoard* board = new chessBoard();
+    board->getSquare(1, 0)->setPiece(Pawn1);
+    EXPECT_TRUE(Pawn1->canMoveTo(1, 0, 3, 0, *board) == true);
+}
+
+TEST(PawnTests, testBlackCanMove2FromField)
+{
+    Pawn* Pawn1 = new Pawn(Color::Black);
+    chessBoard* board = new chessBoard();
+    board->getSquare(2, 0)->setPiece(Pawn1);
+    EXPECT_FALSE(Pawn1->canMoveTo(2, 0, 4, 0, *board) == true);
+}
+
+TEST(PawnTests, testBlackMoveBackwards)
+{
+    Pawn* Pawn1 = new Pawn(Color::Black);
+    chessBoard* board = new chessBoard();
+    board->getSquare(4, 3)->setPiece(Pawn1);
+    EXPECT_FALSE(Pawn1->canMoveTo(4, 3, 3, 3, *board) == true);
+}
+
+//General Movement Tests
+TEST(PawnTests, testMoveHorizontal)
+{
+    Pawn* Pawn1 = new Pawn(Color::White);
+    chessBoard* board = new chessBoard();
+    board->getSquare(4, 3)->setPiece(Pawn1);
+    EXPECT_EQ(Pawn1->canMoveTo(4, 3, 4, 4, *board), false);
+}
+
+TEST(PawnTests, testCanMoveWhileBlocked)
+{
+    Pawn* Pawn1 = new Pawn(Color::White);
+    Pawn* Pawn2 = new Pawn(Color::Black);
+    chessBoard* board = new chessBoard();
+    board->getSquare(5, 3)->setPiece(Pawn1);
+    board->getSquare(4, 3)->setPiece(Pawn2);
+    EXPECT_FALSE(Pawn1->canMoveTo(5, 3, 4, 3, *board) == true);
+}
+>>>>>>> master
 
 //getSymbol Tests
 TEST(PawnTests, testGetSymbolWhite)
