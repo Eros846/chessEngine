@@ -54,7 +54,7 @@ TEST(PawnTests, testWhiteMoveBackwards)
     Pawn* Pawn1 = new Pawn(Color::White);
     chessBoard* board = new chessBoard();
     board->getSquare(4, 3)->setPiece(Pawn1);
-    EXPECT_FALSE(Pawn1->canMoveTo(4, 3, 5, 3, *board) == true);
+    EXPECT_EQ(Pawn1->canMoveTo(4, 3, 5, 3, *board), false);
 }
 
 //Black Movement Tests
@@ -96,7 +96,7 @@ TEST(PawnTests, testMoveHorizontal)
     Pawn* Pawn1 = new Pawn(Color::White);
     chessBoard* board = new chessBoard();
     board->getSquare(4, 3)->setPiece(Pawn1);
-    EXPECT_FALSE(Pawn1->canMoveTo(4, 3, 4, 4, *board) == true);
+    EXPECT_EQ(Pawn1->canMoveTo(4, 3, 4, 4, *board), false);
 }
 
 TEST(PawnTests, testCanMoveWhileBlocked)
