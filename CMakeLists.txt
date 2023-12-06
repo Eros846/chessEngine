@@ -46,6 +46,7 @@ ADD_EXECUTABLE(runPiecesTest
 ADD_EXECUTABLE(runChessGameTest
     #Add test file from testChessGame here to test
     testChessGame/squareTest.cpp
+    testChessGame/chessBoardTest.cpp
 
 
     #Don't change this 
