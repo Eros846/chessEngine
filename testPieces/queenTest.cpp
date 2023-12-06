@@ -23,14 +23,98 @@ TEST(QueenTests, testConstructorNone)
     ASSERT_TRUE(queen1->getColor() == Color::none);
 }
 
-//canMove Tests NEED TO BE IMPLEMENTED
-// TEST(BishopTests, testCanMove)
-// {
-//     Bishop* bishop1 = new Bishop(Color::White);
-//     chessBoard* board = new chessBoard();
-//     board[7][2]->setPiece(bishop1);
-//     EXPECT_EQ(bishop1->canMoveTo(7, 2, 6, 3, &board), true);
-// }
+//canMove Tests
+TEST(QueenTests, testCanMoveForwardRight)
+{
+    Queen* queen1 = new Queen(Color::White);
+    chessBoard* board = new chessBoard();
+    board->getSquare(7, 3)->setPiece(queen1);
+
+    EXPECT_EQ(queen1->canMoveTo(7, 3, 6, 4, *board), true);
+}
+
+TEST(QueenTests, testCanMoveForwardLeft)
+{
+    Queen* queen1 = new Queen(Color::White);
+    chessBoard* board = new chessBoard();
+    board->getSquare(7, 3)->setPiece(queen1);
+
+    ASSERT_TRUE(queen1->canMoveTo(7, 3, 6, 2, *board) == true);
+}
+
+TEST(QueenTests, testCanMoveForwardRightMultipleSpaces)
+{
+    Queen* queen1 = new Queen(Color::White);
+    chessBoard* board = new chessBoard();
+    board->getSquare(7, 3)->setPiece(queen1);
+
+    EXPECT_TRUE(queen1->canMoveTo(7, 3, 3, 7, *board) == true);
+}
+
+TEST(QueenTests, testCanMoveForwardLefttMultipleSpaces)
+{
+    Queen* queen1 = new Queen(Color::White);
+    chessBoard* board = new chessBoard();
+    board->getSquare(5, 4)->setPiece(queen1);
+
+    EXPECT_EQ(queen1->canMoveTo(5, 4, 3, 2, *board), true);
+}
+
+TEST(QueenTests, testCanMoveWithPieceInTheWay)
+{
+    Queen* queenWhite = new Queen(Color::White);
+    Queen* queenBlack = new Queen(Color::Black);
+    chessBoard* board = new chessBoard();
+    board->getSquare(7, 3)->setPiece(queenWhite);
+    board->getSquare(4, 3)->setPiece(queenBlack);
+
+    ASSERT_FALSE(queenWhite->canMoveTo(7, 3, 2, 3, *board) == true);
+}
+
+TEST(QueenTests, testCanMoveUp)
+{
+    Queen* queen1 = new Queen(Color::Black);
+    chessBoard* board = new chessBoard();
+    board->getSquare(5, 1)->setPiece(queen1);
+
+    EXPECT_TRUE(queen1->canMoveTo(5, 1, 2, 1, *board) == true);
+}
+
+TEST(QueenTests, testCanMoveHortizontal)
+{
+    Queen* queen1 = new Queen(Color::Black);
+    chessBoard* board = new chessBoard();
+    board->getSquare(4, 3)->setPiece(queen1);
+
+    EXPECT_TRUE(queen1->canMoveTo(4, 3, 4, 6, *board) == true);
+}
+
+TEST(QueenTests, testCanMoveBackwards)
+{
+    Queen* queen1 = new Queen(Color::Black);
+    chessBoard* board = new chessBoard();
+    board->getSquare(5, 3)->setPiece(queen1);
+
+    EXPECT_TRUE(queen1->canMoveTo(5, 3, 7, 3, *board) == true);
+}
+
+TEST(QueenTests, testCanMoveBadDiagonal)
+{
+    Queen* queen1 = new Queen(Color::Black);
+    chessBoard* board = new chessBoard();
+    board->getSquare(7, 0)->setPiece(queen1);
+
+    EXPECT_FALSE(queen1->canMoveTo(7, 0, 3, 1, *board) == true);
+}
+
+TEST(QueenTests, testCanMoveBadDiagonal2)
+{
+    Queen* queen1 = new Queen(Color::Black);
+    chessBoard* board = new chessBoard();
+    board->getSquare(7, 0)->setPiece(queen1);
+
+    EXPECT_FALSE(queen1->canMoveTo(7, 0, 3, 5, *board) == true);
+}
 
 //getSymbol Tests
 TEST(QueenTests, testGetSymbolWhite)
