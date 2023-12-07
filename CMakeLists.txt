@@ -43,27 +43,27 @@ ADD_EXECUTABLE(runPiecesTest
     
 ) 
 
-# ADD_EXECUTABLE(runChessGameTest
-#     #Add test file from testChessGame here to test
-#     testChessGame/squareTest.cpp
+ADD_EXECUTABLE(runChessGameTest
+    #Add test file from testChessGame here to test
+    testChessGame/squareTest.cpp
 
 
-#     #Don't change this 
-#     piecesSrc/bishop.cpp
-#     chessGameSrc/chessBoard.cpp
-#     piecesSrc/king.cpp
-#     piecesSrc/knight.cpp
-#     piecesSrc/pawn.cpp
-#     piecesSrc/piece.cpp
-#     piecesSrc/queen.cpp
-#     piecesSrc/rook.cpp
-#     chessGameSrc/square.cpp
-#     chessGameSrc/chessGame.cpp 
+    #Don't change this 
+    piecesSrc/bishop.cpp
+    chessGameSrc/chessBoard.cpp
+    piecesSrc/king.cpp
+    piecesSrc/knight.cpp
+    piecesSrc/pawn.cpp
+    piecesSrc/piece.cpp
+    piecesSrc/queen.cpp
+    piecesSrc/rook.cpp
+    chessGameSrc/square.cpp
+    chessGameSrc/chessGame.cpp 
 
-# ) 
+) 
 
 
-#target_link_libraries(runChessGameTest gmock gtest gtest_main)
+target_link_libraries(runChessGameTest gmock gtest gtest_main)
 target_link_libraries(runPiecesTest gmock gtest gtest_main)
 
 
