@@ -9,63 +9,62 @@
 TEST(ChessBoardTests, testDefaultConstructorEmpty)
 {
     chessBoard* board1 = new chessBoard();
-    EXPECT_TRUE(board1->getSquare(3, 4)->isEmpty() == true);
+    EXPECT_TRUE(board1->getSquare(3, 4).isEmpty() == true);
 }
 
 TEST(ChessBoardTests, testDefaultConstructorNotEmpty)
 {
     chessBoard* board1 = new chessBoard();
-    Square* square1 = board1->getSquare(0, 0);
-    Knight* knight1 = new Knight(Color::White);
-    square1->setPiece(knight1);
+    Square* square1 = &board1->getSquare(0, 0);
+    unique_ptr<Piece> knight1 = make_unique<Knight>(Color::White);
+    square1->setPiece(move(knight1));
 
-    EXPECT_EQ(board1->getSquare(0, 0)->isEmpty(), false);
+    EXPECT_EQ(board1->getSquare(0, 0).isEmpty(), false);
 }
 
 TEST(ChessBoardTests, testDefaultConstructorEmptyAfterClear)
 {
     chessBoard* board1 = new chessBoard();
-    Square* square1 = board1->getSquare(0, 0);
-    Knight* knight1 = new Knight(Color::White);
-    square1->setPiece(knight1);
+    Square* square1 = &board1->getSquare(0, 0);
+    unique_ptr<Piece> knight1 = make_unique<Knight>(Color::White);
+    square1->setPiece(move(knight1));
 
-    EXPECT_EQ(board1->getSquare(0, 0)->isEmpty(), false);
+    EXPECT_EQ(board1->getSquare(0, 0).isEmpty(), false);
 
     square1->clearSquare();
 
-    ASSERT_TRUE(board1->getSquare(0, 0)->isEmpty() == true);
+    ASSERT_TRUE(board1->getSquare(0, 0).isEmpty() == true);
 }
 
 //getSquare Tests
 TEST(ChessBoardTests, testGetSquareEmpty)
 {
     chessBoard* board1 = new chessBoard();
-    EXPECT_FALSE(board1->getSquare(3, 4) == nullptr);
+    EXPECT_FALSE(board1->getSquare(3, 4).isEmpty() == false);
 }
 
 TEST(ChessBoardTests, testGetSquareNotEmpty)
 {
     chessBoard* board1 = new chessBoard();
-    Square* square1 = board1->getSquare(0, 0);
-    Knight* knight1 = new Knight(Color::White);
-    square1->setPiece(knight1);
+    Square* square1 = &board1->getSquare(0, 0);
+    unique_ptr<Piece> knight1 = make_unique<Knight>(Color::White);
+    square1->setPiece(move(knight1));
 
-    EXPECT_EQ(board1->getSquare(0, 0)->getPiece()->getSymbol(), "N");
+    EXPECT_EQ(board1->getSquare(0, 0).getPiece().getSymbol(), "N");
 }
-
 
 TEST(ChessBoardTests, testGetSquareEmptyAfterClear)
 {
     chessBoard* board1 = new chessBoard();
-    Square* square1 = board1->getSquare(0, 0);
-    Knight* knight1 = new Knight(Color::White);
-    square1->setPiece(knight1);
+    Square* square1 = &board1->getSquare(0, 0);
+    unique_ptr<Piece> knight1 = make_unique<Knight>(Color::White);
+    square1->setPiece(move(knight1));
 
-    EXPECT_EQ(board1->getSquare(0, 0)->getPiece()->getSymbol(), "N");
+    EXPECT_EQ(board1->getSquare(0, 0).getPiece().getSymbol(), "N");
 
     square1->clearSquare();
 
-    ASSERT_TRUE(board1->getSquare(0, 0)->isEmpty() == true);
+    ASSERT_TRUE(board1->getSquare(0, 0).isEmpty() == true);
 }
 
 //setupBoard Tests
@@ -74,7 +73,7 @@ TEST(ChessBoardTests, testSetupBoardNotEmpty)
     chessBoard* board1 = new chessBoard();
     board1->setupBoard();
     
-    EXPECT_EQ(board1->getSquare(0, 0)->getPiece()->getSymbol(), "r");
+    EXPECT_EQ(board1->getSquare(0, 0).getPiece().getSymbol(), "r");
 }
 
 TEST(ChessBoardTests, testSetupBoardEmpty)
@@ -82,7 +81,7 @@ TEST(ChessBoardTests, testSetupBoardEmpty)
     chessBoard* board1 = new chessBoard();
     board1->setupBoard();
     
-    EXPECT_TRUE(board1->getSquare(2, 0)->isEmpty() == true);
+    EXPECT_TRUE(board1->getSquare(2, 0).isEmpty() == true);
 }
 
 TEST(ChessBoardTests, testSetupBoardWrongPiece)
@@ -90,7 +89,7 @@ TEST(ChessBoardTests, testSetupBoardWrongPiece)
     chessBoard* board1 = new chessBoard();
     board1->setupBoard();
     
-    EXPECT_FALSE(board1->getSquare(1, 0)->getPiece()->getSymbol() == "r");
+    EXPECT_FALSE(board1->getSquare(1, 0).getPiece().getSymbol() == "r");
 }
 
 //displayBoard Tests
