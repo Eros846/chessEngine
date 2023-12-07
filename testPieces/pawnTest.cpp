@@ -23,6 +23,16 @@ TEST(PawnTests, testConstructorNone)
     ASSERT_TRUE(pawn1->getColor() == Color::none);
 }
 
+<<<<<<< HEAD
+//canMove Tests NEED TO BE IMPLEMENTED
+// TEST(BishopTests, testCanMove)
+// {
+//     Bishop* bishop1 = new Bishop(Color::White);
+//     chessBoard* board = new chessBoard();
+//     board[7][2].setPiece(bishop1);
+//     EXPECT_EQ(bishop1->canMoveTo(7, 2, 6, 3, &board), true);
+// }
+=======
 //canMove Tests
 //White Movement Tests
 TEST(PawnTests, testWhiteMove1FromStart)
@@ -108,6 +118,7 @@ TEST(PawnTests, testCanMoveWhileBlocked)
     board->getSquare(4, 3)->setPiece(Pawn2);
     EXPECT_FALSE(Pawn1->canMoveTo(5, 3, 4, 3, *board) == true);
 }
+>>>>>>> master
 
 //getSymbol Tests
 TEST(PawnTests, testGetSymbolWhite)

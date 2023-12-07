@@ -28,7 +28,7 @@ TEST(KnightTests, testCanMoveRight)
 {
     Knight* knight1 = new Knight(Color::White);
     chessBoard* board = new chessBoard();
-    board->getSquare(7, 6)->setPiece(knight1);
+    board->getSquare(7, 6).setPiece(knight1);
 
     EXPECT_EQ(knight1->canMoveTo(7, 6, 5, 7, *board), true);
 }
@@ -37,7 +37,7 @@ TEST(KnightTests, testCanMoveLeft)
 {
     Knight* knight1 = new Knight(Color::White);
     chessBoard* board = new chessBoard();
-    board->getSquare(7, 6)->setPiece(knight1);
+    board->getSquare(7, 6).setPiece(knight1);
 
     ASSERT_TRUE(knight1->canMoveTo(7, 6, 5, 5, *board) == true);
 }
@@ -46,7 +46,7 @@ TEST(KnightTests, testCanMoveLeftBack)
 {
     Knight* knight1 = new Knight(Color::White);
     chessBoard* board = new chessBoard();
-    board->getSquare(5, 5)->setPiece(knight1);
+    board->getSquare(5, 5).setPiece(knight1);
 
     ASSERT_TRUE(knight1->canMoveTo(5, 5, 7, 4, *board) == true);
 }
@@ -55,7 +55,7 @@ TEST(KnightTests, testCanMoveRightBack)
 {
     Knight* knight1 = new Knight(Color::White);
     chessBoard* board = new chessBoard();
-    board->getSquare(5, 5)->setPiece(knight1);
+    board->getSquare(5, 5).setPiece(knight1);
 
     EXPECT_TRUE(knight1->canMoveTo(5, 5, 7, 6, *board) == true);
 }
@@ -65,8 +65,8 @@ TEST(KnightTests, testCanMoveWithPieceInTheWay)
     Knight* knightWhite = new Knight(Color::White);
     Knight* knightWhite2 = new Knight(Color::White);
     chessBoard* board = new chessBoard();
-    board->getSquare(7, 6)->setPiece(knightWhite);
-    board->getSquare(5, 7)->setPiece(knightWhite2);
+    board->getSquare(7, 6).setPiece(knightWhite);
+    board->getSquare(5, 7).setPiece(knightWhite2);
 
     EXPECT_EQ(knightWhite->canMoveTo(7, 6, 5, 7, *board), false);
 }

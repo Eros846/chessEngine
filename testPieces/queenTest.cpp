@@ -23,6 +23,16 @@ TEST(QueenTests, testConstructorNone)
     ASSERT_TRUE(queen1->getColor() == Color::none);
 }
 
+<<<<<<< HEAD
+//canMove Tests NEED TO BE IMPLEMENTED
+// TEST(BishopTests, testCanMove)
+// {
+//     Bishop* bishop1 = new Bishop(Color::White);
+//     chessBoard* board = new chessBoard();
+//     board[7][2].setPiece(bishop1);
+//     EXPECT_EQ(bishop1->canMoveTo(7, 2, 6, 3, &board), true);
+// }
+=======
 //canMove Tests
 TEST(QueenTests, testCanMoveForwardRight)
 {
@@ -115,6 +125,7 @@ TEST(QueenTests, testCanMoveBadDiagonal2)
 
     EXPECT_FALSE(queen1->canMoveTo(7, 0, 3, 5, *board) == true);
 }
+>>>>>>> master
 
 //getSymbol Tests
 TEST(QueenTests, testGetSymbolWhite)

@@ -18,7 +18,7 @@ bool King::canMoveTo(int sourceX, int sourceY, int targetX, int targetY, const c
     // Check that the move is a one-square move and not to the same square it's already on
     if (isOneSquareMove && (deltaX != 0 || deltaY != 0)) {
         // check the target square is not occupied by a piece of the same color
-        Piece* targetPiece = board.getSquare(targetX, targetY)->getPiece();
+        Piece* targetPiece = &board.getSquare(targetX, targetY).getPiece();
         if (targetPiece == nullptr || targetPiece->getColor() != this->getColor()) {
             return true; // move is valid
         }

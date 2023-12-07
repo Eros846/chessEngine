@@ -1,5 +1,5 @@
 #include "../chessGameHeader/square.hpp"
-
+#include <iostream>
 Square::Square() : row(0), col(0), pieceType(nullptr) {}
 
 Square::Square(int r, int c) : row(r), col(c), pieceType(nullptr) {}
@@ -12,22 +12,33 @@ int Square::getCol(){
    return col;
 }
 
-Piece* Square::getPiece(){
-  if (pieceType) {  // Check if pieceType holds an object
-        return pieceType.get();  // Return the pointer if a piece exists
-    } else {
-        return nullptr;  // Explicitly return nullptr if no piece exists
+Piece& Square::getPiece(){
+   if (!pieceType) {
+        throw std::runtime_error("Attempted to access a null piece");
     }
+    return *(this->pieceType);
 }
 
-void Square::setPiece(Piece* p){
-   pieceType.reset(p);
+void Square::setPiece(unique_ptr<Piece> p){
+   if (p) {
+      cout << "Setting piece to target square" << endl;
+   } else {
+      cout << "Received null piece in setPiece" << endl;
+   }
+      this->clearSquare();
+      pieceType = std::move(p);
+
+   }
+
+bool Square::isEmpty() {
+    return !pieceType;
 }
 
-bool Square::isEmpty(){
-   return pieceType == nullptr;
-}
 
 void Square::clearSquare(){
-   pieceType.reset(); 
+   this->pieceType.reset();
+}
+
+unique_ptr<Piece> Square::releasePiece() {
+    return std::move(pieceType);
 }

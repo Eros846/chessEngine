@@ -9,19 +9,20 @@ class Piece;
 
 class Square {
  private:
-   std::unique_ptr<Piece> pieceType;
+   std::unique_ptr<Piece>pieceType;
    int row;
    int col;
    
  public:
    Square();
    Square(int r, int c);
-   Piece* getPiece();
+   Piece& getPiece();
    bool isEmpty();
-   void setPiece(Piece* p);
+   void setPiece(std::unique_ptr<Piece> p);
    void clearSquare();
    int getRow();
    int getCol();
+   std::unique_ptr<Piece> releasePiece();
 };
 
 #endif /* SQUARE_HPP */
