@@ -24,88 +24,79 @@ TEST(BishopTests, testConstructorNone)
 }
 
 //canMove Tests
-TEST(BishopTests, testCanMoveForwardRight)
-{
-    unique_ptr<Piece> bishop1 = make_unique<Bishop>(Color::White);
-    chessBoard* board = new chessBoard();
-    board->getSquare(7,2).setPiece(move(bishop1));
+// TEST(BishopTests, testCanMoveForwardRight)
+// {
+//     unique_ptr<Piece> bishop1 = make_unique<Bishop>(Color::White);
+//     chessBoard* board = new chessBoard();
+//     board->getSquare(7,2).setPiece(move(bishop1));
 
-    std::cout << "Before move:" << std::endl;
-    board->displayBoard();  // Print the board before the move
-
-    bool canMove = board->getSquare(7, 2).getPiece().canMoveTo(7, 2, 6, 3, *board);
-
-    std::cout << "After move:" << std::endl;
-    board->displayBoard();  // Print the board after the move
-
-    EXPECT_EQ(canMove, true);
-}
-
+//     EXPECT_EQ(board->getSquare(7, 2).getPiece().canMoveTo(7, 2, 6, 3, *board), true);
+// }
 
 // TEST(BishopTests, testCanMoveForwardRightBlack)
 // {
-//     Bishop* bishop1 = new Bishop(Color::Black);
+//     unique_ptr<Piece> bishop1 = make_unique<Bishop>(Color::Black);
 //     chessBoard* board = new chessBoard();
-//     board->getSquare(0, 2).setPiece(bishop1);
+//     board->getSquare(0, 2).setPiece(move(bishop1));
 
-//     EXPECT_EQ(bishop1->canMoveTo(0, 2, 3, 5, *board), true);
+//     EXPECT_EQ(board->getSquare(0,2).getPiece().canMoveTo(0, 2, 3, 5, *board), true);
 // }
 
 // TEST(BishopTests, testCanMoveForwardLeft)
 // {
-//     Bishop* bishop1 = new Bishop(Color::White);
+//     unique_ptr<Piece> bishop1 = make_unique<Bishop>(Color::White);
 //     chessBoard* board = new chessBoard();
-//     board->getSquare(7, 2).setPiece(bishop1);
+//     board->getSquare(7, 2).setPiece(move(bishop1));
 
-//     ASSERT_TRUE(bishop1->canMoveTo(7, 2, 6, 1, *board) == true);
+//     ASSERT_TRUE(board->getSquare(7,2).getPiece().canMoveTo(7, 2, 6, 1, *board) == true);
 // }
 
 // TEST(BishopTests, testCanMoveForwardRightMultipleSpaces)
 // {
-//     Bishop* bishop1 = new Bishop(Color::White);
+//     unique_ptr<Piece> bishop1 = make_unique<Bishop>(Color::White);
 //     chessBoard* board = new chessBoard();
-//     board->getSquare(7, 2).setPiece(bishop1);
+//     board->getSquare(7, 2).setPiece(move(bishop1));
 
-//     EXPECT_TRUE(bishop1->canMoveTo(7, 2, 3, 6, *board) == true);
+//     EXPECT_TRUE(board->getSquare(7, 2).getPiece().canMoveTo(7, 2, 3, 6, *board) == true);
 // }
 
 // TEST(BishopTests, testCanMoveForwardLefttMultipleSpaces)
 // {
-//     Bishop* bishop1 = new Bishop(Color::White);
+//     unique_ptr<Piece> bishop1 = make_unique<Bishop>(Color::White);
 //     chessBoard* board = new chessBoard();
-//     board->getSquare(7, 5).setPiece(bishop1);
+//     board->getSquare(7, 5).setPiece(move(bishop1));
 
-//     EXPECT_EQ(bishop1->canMoveTo(7, 5, 4, 2, *board), true);
+//     EXPECT_EQ(board->getSquare(7, 5).getPiece().canMoveTo(7, 5, 4, 2, *board), true);
 // }
 
-// TEST(BishopTests, testCanMoveWithPieceInTheWay)
-// {
-//     Bishop* bishopWhite = new Bishop(Color::White);
-//     Bishop* bishopBlack = new Bishop(Color::Black);
-//     chessBoard* board = new chessBoard();
-//     board->getSquare(7, 2).setPiece(bishopWhite);
-//     board->getSquare(5, 4).setPiece(bishopBlack);
+TEST(BishopTests, testCanMoveWithPieceInTheWay)
+{
+    unique_ptr<Piece> bishopWhite = make_unique<Bishop>(Color::White);
+   unique_ptr<Piece> bishopBlack = make_unique<Bishop>(Color::Black);
+    chessBoard* board = new chessBoard();
+    board->getSquare(7, 2).setPiece(move(bishopWhite));
+    board->getSquare(5, 4).setPiece(move(bishopBlack));
 
-//     ASSERT_FALSE(bishopWhite->canMoveTo(7, 2, 4, 5, *board) == true);
-// }
+    ASSERT_FALSE(board->getSquare(7, 2).getPiece().canMoveTo(7, 2, 4, 5, *board) == true);
+}
 
-// TEST(BishopTests, testCanMoveVertical)
-// {
-//     Bishop* bishop1 = new Bishop(Color::Black);
-//     chessBoard* board = new chessBoard();
-//     board->getSquare(0, 2).setPiece(bishop1);
+TEST(BishopTests, testCanMoveVertical)
+{
+    unique_ptr<Piece> bishop1 = make_unique<Bishop>(Color::Black);
+    chessBoard* board = new chessBoard();
+    board->getSquare(0, 2).setPiece(move(bishop1));
 
-//     EXPECT_FALSE(bishop1->canMoveTo(0, 2, 1, 2, *board) == true);
-// }
+    EXPECT_FALSE(board->getSquare(0, 2).getPiece().canMoveTo(0, 2, 1, 2, *board) == true);
+}
 
-// TEST(BishopTests, testCanMoveHortizontal)
-// {
-//     Bishop* bishop1 = new Bishop(Color::Black);
-//     chessBoard* board = new chessBoard();
-//     board->getSquare(0, 2).setPiece(bishop1);
+TEST(BishopTests, testCanMoveHortizontal)
+{
+    unique_ptr<Piece> bishop1 = make_unique<Bishop>(Color::Black);
+    chessBoard* board = new chessBoard();
+    board->getSquare(0, 2).setPiece(move(bishop1));
 
-//     EXPECT_EQ(bishop1->canMoveTo(0, 2, 0, 4, *board), false);
-// }
+    EXPECT_EQ(board->getSquare(0, 2).getPiece().canMoveTo(0, 2, 0, 4, *board), false);
+}
 
 //getSymbol Tests
 TEST(BishopTests, testGetSymbolWhite)

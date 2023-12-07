@@ -25,69 +25,69 @@ TEST(RookTests, testConstructoNone)
 //canMove Tests
 TEST(RookTests, testCanMoveUp)
 {
-    Rook* rook1 = new Rook(Color::Black);
+    unique_ptr<Piece> rook1 = make_unique<Rook>(Color::Black);
     chessBoard* board = new chessBoard();
-    board->getSquare(5, 1)->setPiece(rook1);
+    board->getSquare(5, 1).setPiece(move(rook1));
 
-    EXPECT_TRUE(rook1->canMoveTo(5, 1, 2, 1, *board) == true);
+    EXPECT_TRUE(board->getSquare(5, 1).getPiece().canMoveTo(5, 1, 2, 1, *board) == true);
 }
 
 TEST(RookTests, testCanMoveRight)
 {
-    Rook* rook1 = new Rook(Color::Black);
+    unique_ptr<Piece> rook1 = make_unique<Rook>(Color::Black);
     chessBoard* board = new chessBoard();
-    board->getSquare(4, 3)->setPiece(rook1);
+    board->getSquare(4, 3).setPiece(move(rook1));
 
-    EXPECT_TRUE(rook1->canMoveTo(4, 3, 4, 6, *board) == true);
+    EXPECT_TRUE(board->getSquare(4, 3).getPiece().canMoveTo(4, 3, 4, 6, *board) == true);
 }
 
 TEST(RookTests, testCanMoveLeft)
 {
-    Rook* rook1 = new Rook(Color::Black);
+    unique_ptr<Piece> rook1 = make_unique<Rook>(Color::Black);
     chessBoard* board = new chessBoard();
-    board->getSquare(4, 3)->setPiece(rook1);
+    board->getSquare(4, 3).setPiece(move(rook1));
 
-    EXPECT_TRUE(rook1->canMoveTo(4, 3, 4, 0, *board) == true);
+    EXPECT_TRUE(board->getSquare(4, 3).getPiece().canMoveTo(4, 3, 4, 0, *board) == true);
 }
 
 TEST(RookTests, testCanMoveBackwards)
 {
-    Rook* rook1 = new Rook(Color::Black);
+    unique_ptr<Piece> rook1 = make_unique<Rook>(Color::Black);
     chessBoard* board = new chessBoard();
-    board->getSquare(5, 3)->setPiece(rook1);
+    board->getSquare(5, 3).setPiece(move(rook1));
 
-    EXPECT_TRUE(rook1->canMoveTo(5, 3, 7, 3, *board) == true);
+    EXPECT_TRUE(board->getSquare(5, 3).getPiece().canMoveTo(5, 3, 7, 3, *board) == true);
 }
 
 TEST(RookTests, testCanMoveWithPieceInTheWayVertical)
 {
-    Rook* rookWhite = new Rook(Color::White);
-    Rook* rookBlack = new Rook(Color::Black);
+    unique_ptr<Piece> rookWhite = make_unique<Rook>(Color::White);
+    unique_ptr<Piece> rookBlack = make_unique<Rook>(Color::Black);
     chessBoard* board = new chessBoard();
-    board->getSquare(7, 3)->setPiece(rookWhite);
-    board->getSquare(4, 3)->setPiece(rookBlack);
+    board->getSquare(7, 3).setPiece(move(rookWhite));
+    board->getSquare(4, 3).setPiece(move(rookBlack));
 
-    ASSERT_FALSE(rookWhite->canMoveTo(7, 3, 2, 3, *board) == true);
+    EXPECT_EQ(board->getSquare(7, 3).getPiece().canMoveTo(7, 3, 2, 3, *board), false);
 }
 
 TEST(RookTests, testCanMoveWithPieceInTheWayHorizontal)
 {
-    Rook* rookWhite = new Rook(Color::White);
-    Rook* rookBlack = new Rook(Color::Black);
+    unique_ptr<Piece> rookWhite = make_unique<Rook>(Color::White);
+    unique_ptr<Piece> rookBlack = make_unique<Rook>(Color::Black);
     chessBoard* board = new chessBoard();
-    board->getSquare(4, 0)->setPiece(rookWhite);
-    board->getSquare(4, 3)->setPiece(rookBlack);
+    board->getSquare(4, 0).setPiece(move(rookWhite));
+    board->getSquare(4, 3).setPiece(move(rookBlack));
 
-    ASSERT_FALSE(rookWhite->canMoveTo(4, 0, 4, 6, *board) == true);
+    ASSERT_FALSE(board->getSquare(4, 0).getPiece().canMoveTo(4, 0, 4, 6, *board) == true);
 }
 
 TEST(RookTests, testCanMoveDiagonal)
 {
-    Rook* rook1 = new Rook(Color::Black);
+    unique_ptr<Piece> rook1 = make_unique<Rook>(Color::Black);
     chessBoard* board = new chessBoard();
-    board->getSquare(7, 0)->setPiece(rook1);
+    board->getSquare(7, 0).setPiece(move(rook1));
 
-    EXPECT_FALSE(rook1->canMoveTo(7, 0, 6, 1, *board) == true);
+    EXPECT_EQ(board->getSquare(7, 0).getPiece().canMoveTo(7, 0, 6, 1, *board), false);
 }
 
 //getSymbol Tests
