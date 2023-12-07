@@ -190,5 +190,138 @@ TEST(ChessBoardTests, testDisplayBoardWithMultipleErrors)
 }
 
 //displayBoardFromBlackSide Tests
+TEST(ChessBoardTests, testDisplayBoardFromBlackSideCorrectly)
+{
+    chessBoard board1;
+    board1.setupBoard();
+
+    //Capture the output
+    testing::internal::CaptureStdout();
+    board1.displayBoardFromBlackSide();
+
+    //Save the output
+    string output = testing::internal::GetCapturedStdout();
+
+    //Save expected output
+    std::string expectedOutput =
+        "\n"
+        "   h g f e d c b a\n"
+        "\n"
+        "8  R N B K Q B N R  8\n"
+        "7  P P P P P P P P  7\n"
+        "6  x x x x x x x x  6\n"
+        "5  x x x x x x x x  5\n"
+        "4  x x x x x x x x  4\n"
+        "3  x x x x x x x x  3\n"
+        "2  p p p p p p p p  2\n"
+        "1  r n b k q b n r  1\n"
+        "\n"
+        "   h g f e d c b a\n"
+        "\n";
+
+    EXPECT_EQ(output, expectedOutput);
+}
+
+TEST(ChessBoardTests, testDisplayBoardFromBlackSideIncorrectly)
+{
+    chessBoard board1;
+    board1.setupBoard();
+
+    //Capture the output
+    testing::internal::CaptureStdout();
+    board1.displayBoardFromBlackSide();
+
+    //Save the output
+    string output = testing::internal::GetCapturedStdout();
+
+    //Save expected output
+    std::string expectedOutput =
+        "\n"
+        "   h g f e d c b a\n"
+        "\n"
+        "8  R N B K Q B N R  8\n"
+        "7  P P P P P P P P  7\n"
+        "6  x x x x x x x x  6\n"
+        "5  x x x L x x x x  5\n"
+        "4  x x x x x x x x  4\n"
+        "3  x x x x x x x x  3\n"
+        "2  p p p p p p p p  2\n"
+        "1  r n b k q b n r  1\n"
+        "\n"
+        "   h g f e d c b a\n"
+        "\n";
+
+    EXPECT_FALSE(output == expectedOutput);
+}
+
+TEST(ChessBoardTests, testDisplayBoardFromBlackSideWithMultipleErrors)
+{
+    chessBoard board1;
+    board1.setupBoard();
+
+    //Capture the output
+    testing::internal::CaptureStdout();
+    board1.displayBoardFromBlackSide();
+
+    //Save the output
+    string output = testing::internal::GetCapturedStdout();
+
+    //Save expected output
+    std::string expectedOutput =
+        "\n"
+        "   h g f e d c b a\n"
+        "\n"
+        "8  R N B K Q B N R  8\n"
+        "7  P P P P P P P P  7\n"
+        "6  x x x L x x x x  6\n"
+        "5  x x x x x x m x  5\n"
+        "4  x x x x x x x x  4\n"
+        "3  x p x x x x x x  3\n"
+        "2  p p p p p p p p  2\n"
+        "1  r n b k k b n r  1\n"
+        "\n"
+        "   h g f e d c b a\n"
+        "\n";
+
+    ASSERT_FALSE(output == expectedOutput);
+}
 
 //movePieces Tests
+TEST(ChessBoardTests, testMovePiecesCorrectly)
+{
+    chessBoard* board1 = new chessBoard();
+    Square* square1 = &board1->getSquare(0, 0);
+    unique_ptr<Piece> knight1 = make_unique<Knight>(Color::White);
+    square1->setPiece(move(knight1));
+
+    board1->movePiece(0, 0, 2, 1);
+
+    EXPECT_EQ(board1->getSquare(2, 1).isEmpty(), false);
+}
+
+TEST(ChessBoardTests, testMovePiecesIncorrectly)
+{
+    chessBoard* board1 = new chessBoard();
+    Square* square1 = &board1->getSquare(0, 0);
+    unique_ptr<Piece> knight1 = make_unique<Knight>(Color::White);
+    square1->setPiece(move(knight1));
+    board1->movePiece(0, 0, 3, 1);
+
+    EXPECT_TRUE(board1->getSquare(3, 1).isEmpty() == true);
+}
+
+TEST(ChessBoardTests, testMovePiecesMutlipleTimes)
+{
+    chessBoard* board1 = new chessBoard();
+    Square* square1 = &board1->getSquare(0, 0);
+    unique_ptr<Piece> knight1 = make_unique<Knight>(Color::White);
+    square1->setPiece(move(knight1));
+
+    board1->movePiece(0, 0, 2, 1);
+
+    EXPECT_EQ(board1->getSquare(2, 1).isEmpty(), false);
+
+    board1->movePiece(2, 1, 4, 2);
+
+    ASSERT_TRUE(board1->getSquare(4, 2).getPiece().getSymbol() == "N");
+}
