@@ -28,7 +28,7 @@ class chessGame{
    gameStatus gameStatusNow;
    vector<string> player1Captured;
    vector<string> player2Captured;
-
+   
    public:
    chessGame();
    void startGame();

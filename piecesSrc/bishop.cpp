@@ -4,7 +4,7 @@ Bishop::~Bishop(){
 }
 
 Bishop::Bishop(Color col){
-    color = col;
+    color = col;  
 }
 
 bool Bishop::canMoveTo(int sourceX, int sourceY, int targetX, int targetY, const chessBoard& board) const{
