@@ -173,18 +173,13 @@ void chessBoard::displayBoardFromBlackSide() {
 
 void chessBoard::movePiece(int sourceX, int sourceY, int targetX, int targetY){
     unique_ptr<Piece> toMovePiece = this->getSquare(sourceX, sourceY).releasePiece();
-//     if (toMovePiece) {
-//     cout << "Piece moved from source square" << endl;
-// } else {
-//     cout << "No piece to move from source square" << endl;
-// }
-    
     this->getSquare(targetX, targetY).setPiece(move(toMovePiece));
-    
+  
 }
 
 void chessBoard::capture(int sourceX, int sourceY, int targetX, int targetY){
-    //To implement
+    unique_ptr<Piece> toMovePiece = this->getSquare(sourceX, sourceY).releasePiece();
+    this->getSquare(targetX, targetY).setPiece(move(toMovePiece));
 }
 
 
