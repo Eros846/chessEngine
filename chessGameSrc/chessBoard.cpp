@@ -77,11 +77,35 @@ void chessBoard::displayBoard(){
             }
 
            if (currPiece == nullptr){
-                cout << "x ";
+                cout << ". ";
                
            }
            else{
-               cout << currPiece->getSymbol() << " ";
+                if (currPiece->getSymbol() == "K") {
+                cout << "\u2654 "; // WHITE CHESS KING
+            } else if (currPiece->getSymbol() == "Q") {
+                cout << "\u2655 "; // WHITE CHESS QUEEN
+            } else if (currPiece->getSymbol() == "R") {
+                cout << "\u2656 "; // WHITE CHESS ROOK
+            } else if (currPiece->getSymbol() == "B") {
+                cout << "\u2657 "; // WHITE CHESS BISHOP
+            } else if (currPiece->getSymbol() == "N") {
+                cout << "\u2658 "; // WHITE CHESS KNIGHT
+            } else if (currPiece->getSymbol() == "P") {
+                cout << "\u2659 "; // WHITE CHESS PAWN
+            } else if (currPiece->getSymbol() == "k") {
+                cout << "\u265A "; // BLACK CHESS KING
+            } else if (currPiece->getSymbol() == "q") {
+                cout << "\u265B "; // BLACK CHESS QUEEN
+            } else if (currPiece->getSymbol() == "r") {
+                cout << "\u265C "; // BLACK CHESS ROOK
+            } else if (currPiece->getSymbol() == "b") {
+                cout << "\u265D "; // BLACK CHESS BISHOP
+            } else if (currPiece->getSymbol() == "n") {
+                cout << "\u265E "; // BLACK CHESS KNIGHT
+            } else if (currPiece->getSymbol() == "p") {
+                cout << "\u265F "; // BLACK CHESS PAWN
+            }
            }
        }
        cout << " " << 8 - i;
@@ -110,10 +134,34 @@ void chessBoard::displayBoardFromBlackSide() {
         for (int j = 7; j >= 0; --j) {  // Start from 7 (column h) and go to 0 (column a)
             currSquare = &this->getSquare(i, j);
             if (currSquare->isEmpty()) {
-                cout << "x ";
+                cout << ". ";
             } else {
                 currPiece = &currSquare->getPiece();
-                cout << currPiece->getSymbol() << " ";
+                if (currPiece->getSymbol() == "K") {
+                cout << "\u2654 "; // WHITE CHESS KING
+            } else if (currPiece->getSymbol() == "Q") {
+                cout << "\u2655 "; // WHITE CHESS QUEEN
+            } else if (currPiece->getSymbol() == "R") {
+                cout << "\u2656 "; // WHITE CHESS ROOK
+            } else if (currPiece->getSymbol() == "B") {
+                cout << "\u2657 "; // WHITE CHESS BISHOP
+            } else if (currPiece->getSymbol() == "N") {
+                cout << "\u2658 "; // WHITE CHESS KNIGHT
+            } else if (currPiece->getSymbol() == "P") {
+                cout << "\u2659 "; // WHITE CHESS PAWN
+            } else if (currPiece->getSymbol() == "k") {
+                cout << "\u265A "; // BLACK CHESS KING
+            } else if (currPiece->getSymbol() == "q") {
+                cout << "\u265B "; // BLACK CHESS QUEEN
+            } else if (currPiece->getSymbol() == "r") {
+                cout << "\u265C "; // BLACK CHESS ROOK
+            } else if (currPiece->getSymbol() == "b") {
+                cout << "\u265D "; // BLACK CHESS BISHOP
+            } else if (currPiece->getSymbol() == "n") {
+                cout << "\u265E "; // BLACK CHESS KNIGHT
+            } else if (currPiece->getSymbol() == "p") {
+                cout << "\u265F "; // BLACK CHESS PAWN
+            }
             }
         }
         cout << " " << 8 - i << endl;  // Print the reversed row number again (8 to 1)
