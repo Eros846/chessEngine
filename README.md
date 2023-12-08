@@ -56,9 +56,19 @@ Key Features:
  Another principle we kept in mind was the Liskov Substitution Principle. This principle helped us stay focused when redesigning all the different pieces. Now all the subclass types of pieces will behave according to the Piece superclass. The changes made to the subclass pieces caused us to move functions around, creating a new idea and plan for the classes as stated above.
  The Interface Segregation Principle is one that does not impact our development very much but is very helpful to keep in mind. We understand chess very well, and the visual simplicity on the client side of the program is a theme we are trying to uphold.
  The Dependency Inversion Principle also helped with the redesign process of our class diagram. keeping abstractions and implementations separate is something we did not fully consider when making the original class diagram, which we worked out through feedback and changes during our coding process.
- 
+
+# Final Project Update
+
+ ### Final Class Diagram
+ ![FinalUMLDiagram](https://github.com/cs100/final-project-mdeg011-skark010-daisp002-mmiha004/assets/146981459/8c1dcf7b-5803-4ccd-843c-a7951699ea54)
+ <br> This final UML includes everything we have implemented up to this point in our project.
+ <br> With the planned sprint and the features that come with it, this UML is subject to change.
+ ### Project Status
+ > IMPORTANT!!! FILL IN THIS SECTION BEFORE DEMO
+
+
  > ## Final deliverable
- > All group members will give a demo to the reader during lab time. ou should schedule your demo on Calendly with the same reader who took your second scrum meeting. The reader will check the demo and the project GitHub repository and ask a few questions to all the team members. 
+ > All group members will give a demo to the reader during lab time. You should schedule your demo on Calendly with the same reader who took your second scrum meeting. The reader will check the demo and the project GitHub repository and ask a few questions to all the team members. 
  > Before the demo, you should do the following:
  > * Complete the sections below (i.e. Screenshots, Installation/Usage, Testing)
  > * Plan one more sprint (that you will not necessarily complete before the end of the quarter). Your In-progress and In-testing columns should be empty (you are not doing more work currently) but your TODO column should have a full sprint plan in it as you have done before. This should include any known bugs (there should be some) or new features you would like to add. These should appear as issues/cards on your Project board.
