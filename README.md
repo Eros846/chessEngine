@@ -63,16 +63,9 @@ Key Features:
  ![FinalUMLDiagram](https://github.com/cs100/final-project-mdeg011-skark010-daisp002-mmiha004/assets/146981459/8c1dcf7b-5803-4ccd-843c-a7951699ea54)
  <br> This final UML includes everything we have implemented up to this point in our project.
  <br> With the planned sprint and the features that come with it, this UML is subject to change.
+ <br>
  ### Project Status
- > IMPORTANT!!! FILL IN THIS SECTION BEFORE DEMO
-
-
- > ## Final deliverable
- > All group members will give a demo to the reader during lab time. You should schedule your demo on Calendly with the same reader who took your second scrum meeting. The reader will check the demo and the project GitHub repository and ask a few questions to all the team members. 
- > Before the demo, you should do the following:
- > * Complete the sections below (i.e. Screenshots, Installation/Usage, Testing)
- > * Plan one more sprint (that you will not necessarily complete before the end of the quarter). Your In-progress and In-testing columns should be empty (you are not doing more work currently) but your TODO column should have a full sprint plan in it as you have done before. This should include any known bugs (there should be some) or new features you would like to add. These should appear as issues/cards on your Project board.
- > * Make sure your README file and Project board are up-to-date reflecting the current status of your project (e.g. any changes that you have made during the project such as changes to your class diagram). Previous versions should still be visible through your commit history. 
+ We completed most of what we originally planned for the project, but some features ended up out of scope. The login takes username and password, the player can play a game of chess in the console, all inputs are correctly validated, and the move history is shown to both players after the game. However, being able to undo moves ended up out of scope during our allotted time. Despite not having all the features we hoped for, the game is ultimately playable and a great first version to release. 
  
  ## Screenshots
 ![image](https://github.com/cs100/final-project-mdeg011-skark010-daisp002-mmiha004/assets/57105334/344595b1-5d71-4859-b8f3-2cee791f11bb)
