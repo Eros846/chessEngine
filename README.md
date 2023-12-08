@@ -45,7 +45,7 @@ Key Features:
 ![IMG_0117](https://github.com/cs100/final-project-mdeg011-skark010-daisp002-mmiha004/assets/88258745/718ebf95-f786-4772-aeab-d52006fc5d8c)
 
 
-## Updated Class Diagram and SOLID Principles
+# Updated Class Diagram and SOLID Principles
 
 ### Revised Class Diagram
  ![Phase3UML](https://github.com/cs100/final-project-mdeg011-skark010-daisp002-mmiha004/assets/146981459/4cd6eaff-4242-4b31-b2a4-f7163a8ca2ef)
