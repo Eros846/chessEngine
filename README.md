@@ -65,7 +65,7 @@ Key Features:
  <br> With the planned sprint and the features that come with it, this UML is subject to change.
  <br>
  ### Project Status
- We completed most of what we originally planned for the project, but some features ended up out of scope. The login takes username and password, the player can play a game of chess in the console, all inputs are correctly validated, and the move history is shown to both players after the game. However, being able to undo moves ended up out of scope during our allotted time. We included several customization and accessibility issues we want to address in the future planned sprint. We are aware the game may have bugs or possible leaks, and those would be caught and addressed given the opportunity to continue development.
+ We completed most of what we originally planned for the project, but some features ended up out of scope. The login takes username and password, the player can play a game of chess in the console, all inputs are correctly validated, and the move history is shown to both players after the game. However, being able to undo moves ended up out of scope during our allotted time. We included several customization and accessibility issues we want to address in the future planned sprint. We are aware the game may have bugs, and those would be caught and addressed given the opportunity to continue development.
  
  ## Screenshots
 ![image](https://github.com/cs100/final-project-mdeg011-skark010-daisp002-mmiha004/assets/57105334/344595b1-5d71-4859-b8f3-2cee791f11bb)
