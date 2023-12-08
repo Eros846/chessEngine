@@ -310,13 +310,7 @@ int main() {
                  << ". Write it down if you need." << endl;
           }
         }
-
-        // Test
-        for (auto itr = userProfiles.begin(); itr != userProfiles.end();
-             ++itr) {
-          cout << "Username: " << itr->first << " Password: " << itr->second
-               << endl;
-        }
+        
         usernameValid = false;  // Reset to validate future usernames
         passwordValid = false;
       }
@@ -325,7 +319,7 @@ int main() {
         cout << "You entered option 3." << endl;
 
         while (user1Valid == false) {
-          cout << "Player 1, Enter an existing username ";
+          cout << "Player 1, Enter an existing username: ";
           cin >> player1Username;
           cin.ignore(256, '\n');
           
@@ -342,14 +336,14 @@ int main() {
         }
 
         while (user2Valid == false) {
-          cout << "Player 2, Enter an existing username and password ";
+          cout << "Player 2, Enter an existing username: ";
           cin >> player2Username;
           cin.ignore(256, '\n');
           
             cout << "Player 2, Enter the password for the username: ";
             cin >> player2Password;
             cin.ignore(256, '\n');
-            if (userProfiles[player2Username] == player2Password) {
+            if (userProfiles[player2Username] == player2Password && player2Username != player1Username) {
               user2Valid = true;
             } else {
               cout << "Invalid username or password! Try again." << endl;
