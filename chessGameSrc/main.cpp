@@ -48,6 +48,8 @@ void playGame() {
   int userMove2;
   game1.startGame();
 
+  
+
   userMoveCounter = 1;
   while (gameStatus::IN_PROGRESS == game1.getGameStatus()) {
     {

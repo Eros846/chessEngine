@@ -12,7 +12,7 @@
 class chessBoard;
 enum class Color;
 
-enum class gameStatus {IN_PROGRESS, CHECKMATE, DRAW, STALEMATE};
+enum class gameStatus {IN_PROGRESS, CHECKMATE, DRAW, STALEMATE, CHECK};
 
 
 using namespace std;
@@ -29,6 +29,15 @@ class chessGame{
    vector<string> player1Captured;
    vector<string> player2Captured;
    
+
+
+
+
+
+
+   
+
+
    public:
    chessGame();
    void startGame();

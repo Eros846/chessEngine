@@ -178,7 +178,8 @@ void chessBoard::movePiece(int sourceX, int sourceY, int targetX, int targetY){
 }
 
 void chessBoard::capture(int sourceX, int sourceY, int targetX, int targetY){
-    //To implement
+    unique_ptr<Piece> toMovePiece = this->getSquare(sourceX, sourceY).releasePiece();
+    this->getSquare(targetX, targetY).setPiece(move(toMovePiece));
 }
 
 
