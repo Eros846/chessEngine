@@ -73,6 +73,8 @@ Key Features:
 ![image](https://github.com/cs100/final-project-mdeg011-skark010-daisp002-mmiha004/assets/57105334/554ced92-4f7c-4eed-b695-ae0be570de2b)
 <br>
 <img width="346" alt="image" src="https://github.com/cs100/final-project-mdeg011-skark010-daisp002-mmiha004/assets/57105334/bd5d7560-7d49-446c-95e4-2cdc51e73956">
+<br> Note: The above screenshot for the chessboard was taken using dark theme so the Unicode colors are inverted. 
+<br> On light theme, the pieces are colored properly.
 
  ## Installation/Usage
  ### Installation
