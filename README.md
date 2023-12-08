@@ -71,7 +71,8 @@ Key Features:
 ![image](https://github.com/cs100/final-project-mdeg011-skark010-daisp002-mmiha004/assets/57105334/344595b1-5d71-4859-b8f3-2cee791f11bb)
 ![image](https://github.com/cs100/final-project-mdeg011-skark010-daisp002-mmiha004/assets/57105334/d49f27a5-d835-4acb-aa2b-9ed49bc86f59)
 ![image](https://github.com/cs100/final-project-mdeg011-skark010-daisp002-mmiha004/assets/57105334/554ced92-4f7c-4eed-b695-ae0be570de2b)
-![image](https://github.com/cs100/final-project-mdeg011-skark010-daisp002-mmiha004/assets/57105334/ea20c672-91ed-485f-b84c-50021af328d8)
+<br>
+<img width="346" alt="image" src="https://github.com/cs100/final-project-mdeg011-skark010-daisp002-mmiha004/assets/57105334/bd5d7560-7d49-446c-95e4-2cdc51e73956">
 
  ## Installation/Usage
  ### Installation
