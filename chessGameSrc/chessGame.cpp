@@ -6,11 +6,6 @@
 
     #include <stdio.h>
 
-    //     private:
-    //     std::unique_ptr<chessBoard> board;
-    //     std::pair<int, int> whiteKingPosition;
-    //     std::pair<int, int> blackKingPosition;
-    //     vector<string> moves;
 
     chessGame::chessGame(): board(std::make_unique < chessBoard > ()) {
 
@@ -22,42 +17,104 @@
 
     }
 
-    //     void startGame();
     void chessGame::startGame() {
       board.get() -> setupBoard();
       board.get()->displayBoard();
     }
 
-    //     void makeMove(int sourceX, int sourceY, int targetX, int targetY);
 
     void chessGame::makeMove(int sourceX, int sourceY, int targetX, int targetY, bool white) {
 
       //Check coordinates in bound
-
-      //Declare the pointers
+      if (sourceX < 0 || sourceX > 7 || sourceY < 0 || sourceY > 7 ||
+        targetX < 0 || targetX > 7 || targetY < 0 || targetY > 7) {
+        lastMove =false; 
+        return;
+    }
+      
+      //The two pieces that we are dealing with
       Piece * sourcePiece;
       Piece * targetPiece;
 
+      
+      Square* sourceSquare = &board.get()->getSquare(sourceX, sourceY);
+
       //Checking if the source is empty
-      sourcePiece = &board.get()->getSquare(sourceX, sourceY).getPiece();
+      if(sourceSquare->isEmpty()){
+        cout << "There is no piece on the source square! ";
+        lastMove =false; 
+        return;
+      }
+
+      //Checking that the player is moving it's own piece
+      else{
+          sourcePiece = &board.get()->getSquare(sourceX, sourceY).getPiece();
+          // char symbolSP = sourcePiece -> getSymbol()[0];
+
+          if(white){
+            if (sourcePiece->getColor() != Color::White) {
+            cout << "Please move your own piece! ";
+            lastMove = false;
+            return;
+            }
+          }
+          else {
+             if (sourcePiece->getColor() != Color::Black) {
+              cout << "Please move your own piece! ";
+              lastMove = false;
+              return;
+            }
+          }
+          }
+
+      //Checking if the target square is of same color
+      
+      Square* targetSquare = &board.get()->getSquare(targetX, targetY);
+        if(!targetSquare->isEmpty()){
+            targetPiece = &board.get()->getSquare(targetX, targetY).getPiece();
+
+            if(white){
+              if(targetPiece->getColor() != Color::Black){
+                cout << "You cannot attack your own piece! ";
+                lastMove = false;
+                return;
+              }
+            }
+            else {
+              if(targetPiece->getColor() != Color::White){
+                cout << "You cannot attack your own piece, ";
+                lastMove = false; 
+                return;
+              }
+            }
+      }
+
+      //If pawn 
+
+      bool validMove = sourcePiece->canMoveTo(sourceX,sourceY, targetX, targetY, *board);
+
+      if(!validMove){
+        cout << "Your piece " << sourcePiece->getSymbol() << " cannot move there. ";
+        lastMove = false;
+        return;
+      }
+
+
+
+      //If king
+
+
+
+
+
+
+
+
+
       lastMove = true;
       board.get()->movePiece(sourceX, sourceY,  targetX,  targetY);
 
-      // First, check if the square pointer is not null
-      // if (square == nullptr) {
-      //     cout << "Invalid square coordinates. Please check your input." << endl;
-      //     lastMove = false;
-      //     return;
-      // }
   
-      // // Then check if the square is empty
-      // if (square->isEmpty()) {
-      //     cout << "There is no piece to make a move. Please check your board." << endl;
-      //     lastMove = false;
-      //     return;
-      // } else {
-      //     sourcePiece = square->getPiece();
-      // }
 /*
 
       if(board.get() -> getSquare(sourceX, sourceY)->isEmpty()) {
@@ -127,14 +184,19 @@
 
     }
 */
+
+    if(white){
+      this->board.get()->displayBoardFromBlackSide();
     }
-    //     void updateGameStatus();
+    else {
+      this->board.get()->displayBoard();
+    }
+
+    }
 
     void chessGame::updateGameStatus(gameStatus status) {
         gameStatusNow = status;
     }
-
-    //     gameStatus getGameStatus() const;
 
     gameStatus chessGame::getGameStatus() const {
       return gameStatusNow;
